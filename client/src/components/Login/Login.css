@@ -1,0 +1,51 @@
+.image-column {
+  background: url("../../assets/images/login-image.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-content {
+  width: 60%;
+}
+
+.form-content .ant-form-item {
+  margin: 0px;
+}
+
+.form-content .login-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.form-content .ant-select {
+  width: 100%;
+}
+
+.form-content .ant-form-item-label {
+  padding: 10px 0px 0px 0px;
+}
+
+.form-content .ant-select-selector .ant-select-selection-placeholder {
+  text-align: left;
+}
+
+/* For screens smaller than 600px */
+@media only screen and (max-width: 600px) {
+  .image-column {
+    clip-path: polygon(0 0, 80% 0%, 100% 100%, 0 100%);
+  }
+}

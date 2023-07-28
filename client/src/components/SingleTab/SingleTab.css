@@ -1,0 +1,123 @@
+.single-tab .info-heading {
+    color: #767676;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid #949494;
+}
+.notes-info-heading, .details-heading-text {
+    color: #767676;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+.single-tab .details-listing {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #E9ECEF;
+    margin-bottom: 5px;
+}
+
+.single-heading-box {
+    background: #F24E1E;
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.single-details-listing {
+    height: 200px;
+    overflow: scroll;
+    padding: 15px;
+}
+
+.details-listing-label {
+    color: #6C757D;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.details-listing-value {
+    color: #3A819F;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.single-heading {
+    color: #133F72;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.details-heading{
+    color: #212529;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.notes-icon-wrapper {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    padding: 5px;
+    border-radius: 5px;
+    /* border: 1px solid #BEC1C4; */
+    color: #fff;
+}
+.notes-plus-icon {
+    /* border: 1px solid #BEC1C4; */
+    background: #54A912;
+    color: #fff;
+    cursor: pointer;
+}
+.sticky-notes-header, .details-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #949494;
+}
+.create-notes-modal .ant-modal-header {
+    border-bottom: 1px solid #BEC1C4;
+    padding-bottom: 5px;
+}
+.input-label {
+    color: #6C757D;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.notes-buttons-container {
+    display: flex;
+    justify-content: end;
+}
+.notes-close-btn {
+    background: #6C757D;
+    padding: 7px 14px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border: transparent;
+    cursor: pointer;
+}
+.notes-save-btn {
+    background: #0D6EFD;
+    padding: 7px 14px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border: transparent;
+}
+.single-notes-container {
+    background: #FFEDB5;
+    padding: 15px;
+    max-height: 560px;
+    overflow: scroll;
+}
+.note-header-left{
+    flex:3;
+}
+.note-header-right{
+    flex:2;
+}

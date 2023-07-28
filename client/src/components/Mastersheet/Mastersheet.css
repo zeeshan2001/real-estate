@@ -1,0 +1,34 @@
+.body-container {
+    margin: 20px;
+}
+.table-container{
+    width: 100%;
+}
+.mastersheet-header {
+    display: flex;
+    justify-content: space-between;
+}
+.mastersheet-heading{
+    color: #133F72;
+    font-size: 20px;
+    font-weight: 600;
+}
+.mastersheet-header .icon-wrapper {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    border-radius: 5px;
+    background: #1BAEDC;
+    margin-right: 10px;
+    border: 1px solid #1C9FC9;
+    cursor: pointer;
+}
+.mastersheet-header .delete-icon {
+    background: #D03838;
+    border: 1px solid #D03838;
+}
+.mastersheet-header .print-icon {
+    border: 1px solid #BEC1C4;
+    background: #fff;
+}

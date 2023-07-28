@@ -1,0 +1,62 @@
+.gb {
+  color: #54A912 !important;
+}
+.ant-btn-primary {
+  background-color: #54A912 !important;
+}
+.ant-btn-primary:hover {
+  background-color: #75C036 !important;
+}
+.ant-btn-primary, .ant-btn-primary:hover {
+  color: #fff !important;
+  /* border-color: #d9d9d9; */
+  border-color: transparent !important;
+  /* box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02); */
+  box-shadow: none !important;
+  border-radius: 5px !important;
+  font-weight: bold !important;
+}
+.App {
+  background: #EDF1F2;
+}
+
+.fs-10{
+  font-size: 10px;
+}
+.fs-12{
+  font-size: 12px;
+}
+.fw-500 {
+  font-weight: 500;
+}
+.m-10{
+  margin: 10px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-15 {
+  margin-top: 15px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mr-10{
+  margin-right: 10px;
+}
+.mr-15 {
+  margin-right: 15px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.mb-5 {
+  margin-bottom: 5px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.w-100 {
+  width: 100%;
+}

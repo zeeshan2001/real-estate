@@ -1,0 +1,89 @@
+.body-container {
+    margin: 20px;
+    background: #EDF1F2;
+}
+.icon-wrapper {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid #BEC1C4;
+    background: #fff;
+    cursor: pointer;
+}
+.print-icon {
+    border: 1px solid #BEC1C4;
+    background: #fff;
+}
+.intake-form-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.intake-form-heading{
+    color: #133F72;
+    font-weight: 600;
+    font-size: 20px;
+}
+.intake-form-container {
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 20px;
+}
+.general-info{
+    margin-bottom: 15px;
+}
+.input-label {
+    color: #6C757D;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.info-heading {
+    font-size: 16px;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 10px;
+}
+.info-content {
+    background: #F7F9FA;
+    border-top: 1px solid #4096FF;
+    border-radius: 0px 0px 5px 5px;
+    padding: 15px;
+}
+.select-input {
+    width: 100%;
+}
+.intake-buttons-container {
+    display: flex;
+    justify-content: end;
+}
+.intake-close-btn {
+    background: #6C757D;
+    padding: 7px 14px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border: transparent;
+}
+.intake-save-btn {
+    background: #0D6EFD;
+    padding: 7px 14px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border: transparent;
+}
+.create-notes-modal .ant-btn-default {
+    border: 1px solid #999999 !important;
+    background: #fff !important;
+    color: #343A40 !important;
+    font-weight: 500 !important;
+}
+.star-error{
+    color: #ff4d4f;
+    margin-right: 1px;
+}
