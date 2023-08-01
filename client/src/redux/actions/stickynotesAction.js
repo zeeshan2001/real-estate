@@ -16,7 +16,10 @@ export const addStickyNote = (data) => {
       dispatch({ type: ADD_NOTES_REQUEST });
 
       // Send the API request to add property
-      const response = await axios.post("/api/stickynotes/add", data);
+      const response = await axios.post(
+        "https://rs-backend.onrender.com/api/stickynotes/add",
+        data
+      );
 
       // Dispatch the register success action with the response data
       dispatch({
@@ -43,7 +46,7 @@ export const fetchStickyNoteByProperty = (data) => {
 
       // Send the API request to fetch property
       const response = await axios.get(
-        `/api/stickynotes/propertyStickyNotes`,
+        `https://rs-backend.onrender.com/api/stickynotes/propertyStickyNotes`,
         data
       );
 

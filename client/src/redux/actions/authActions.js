@@ -25,7 +25,10 @@ export const loginUser = (user) => {
       }
 
       // Send the API login to login the user
-      const response = await axios.post("/api/auth/login", user);
+      const response = await axios.post(
+        "https://rs-backend.onrender.com/api/auth/login",
+        user
+      );
 
       // Dispatch the login success action with the response data
       dispatch({
@@ -51,7 +54,10 @@ export const addUser = (user) => {
       dispatch({ type: SET_ADD_USER_REQUEST });
 
       // Send the API request to create the user
-      const response = await axios.post("/api/auth/addUser", user);
+      const response = await axios.post(
+        "https://rs-backend.onrender.com/api/auth/addUser",
+        user
+      );
 
       // Dispatch the register success action with the response data
       dispatch({
