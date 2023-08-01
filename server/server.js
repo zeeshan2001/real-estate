@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
 const propertyRoutes = require("./routes/property");
@@ -15,7 +16,7 @@ mongoose
   .catch((err) => console.log(err));
 
 const app = express();
-
+app.use(cors());
 app.use(express.json()); // It's important to use this line to be able parse incoming request bodies
 
 app.use("/api/auth", authRoutes);
