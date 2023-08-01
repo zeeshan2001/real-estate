@@ -50,8 +50,6 @@ const Financial = (props) => {
     percentage: ((item.totalGcFees / totalGcFees) * 100).toFixed(2),
   }));
 
-  console.log("*data units: ", unitsWithPercentage, devFeesWithPercentage);
-
   const onPieClick = (data, index) => {
     setActiveIndex(index);
     setActiveData(data);

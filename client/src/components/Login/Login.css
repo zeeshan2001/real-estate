@@ -25,9 +25,9 @@
   margin: 0px;
 }
 
-.form-content .login-button {
+.form-content .login-button-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 20px;
 }
 

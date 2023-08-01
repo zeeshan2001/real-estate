@@ -26,7 +26,7 @@ import {
 } from "./actionTypes";
 
 // Action Add Property for adding a property
-export const addProperty = (data) => {
+export const addProperty = (data, onSuccessCallback = null) => {
   return async (dispatch) => {
     try {
       // Dispatch the register request action
@@ -40,6 +40,9 @@ export const addProperty = (data) => {
         type: ADD_PROPERTY_SUCCESS,
         payload: response.data,
       });
+      if (onSuccessCallback && onSuccessCallback instanceof Function) {
+        onSuccessCallback(response.data);
+      }
     } catch (error) {
       // Dispatch the register failure action with the error message
       console.log("*error: ", error);
@@ -52,7 +55,7 @@ export const addProperty = (data) => {
 };
 
 // Action Add Property for adding a property
-export const updateProperty = (id, data) => {
+export const updateProperty = (id, data, onSuccessCallback = null) => {
   return async (dispatch) => {
     try {
       // Dispatch the register request action
@@ -66,6 +69,9 @@ export const updateProperty = (id, data) => {
         type: UPDATE_PROPERTY_SUCCESS,
         payload: response.data,
       });
+      if (onSuccessCallback && onSuccessCallback instanceof Function) {
+        onSuccessCallback(response.data);
+      }
     } catch (error) {
       // Dispatch the register failure action with the error message
       console.log("*error: ", error);

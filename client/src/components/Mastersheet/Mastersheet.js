@@ -377,6 +377,7 @@ const Mastersheet = () => {
             // dataSource={data}
             dataSource={dataSource}
             scroll={{ x: "100%" }}
+            pagination={false}
           />
         </div>
       </Loading>

@@ -16,7 +16,7 @@ const MultiMap = ({ data }) => {
   };
 
   const navigate = useNavigate();
-  console.log("*data: ", data);
+
   const [activeMarker, setActiveMarker] = useState(null);
 
   const handleMarkerClick = (state) => {

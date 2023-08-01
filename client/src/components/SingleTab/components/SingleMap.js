@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
@@ -6,11 +6,13 @@ import { DEAL_STATUSES, STATES } from "../../../constants/common";
 
 const SingleMap = ({ property }) => {
   const mapStyles = {
-    height: "500px",
+    height: "550px",
     width: "100%",
   };
 
-  const stateCoordinates = STATES.find((item) => item.value === property.state);
+  const stateCoordinates = STATES.find(
+    (item) => item.value === property?.state
+  );
   const defaultCenter = stateCoordinates
     ? stateCoordinates.coordinates
     : { lat: 37.0902, lng: -95.7129 };
@@ -30,13 +32,6 @@ const SingleMap = ({ property }) => {
     iconSvgText
   )}`;
 
-  console.log(
-    "*property:",
-    property,
-    stateCoordinates?.coordinates,
-    stateStatus.color
-  );
-
   const handleMarkerClick = () => {
     setActiveMarker(property);
   };
@@ -45,9 +40,13 @@ const SingleMap = ({ property }) => {
     console.log(`Double-clicked on ${property}`);
   };
 
+  useEffect(() => {
+    setActiveMarker(property);
+  }, [property]);
+
   return (
     <div className="map-container">
-      <GoogleMap mapContainerStyle={mapStyles} zoom={3} center={defaultCenter}>
+      <GoogleMap mapContainerStyle={mapStyles} zoom={4} center={defaultCenter}>
         <Marker
           icon={{
             url: customMarkerIconUrl,
@@ -68,7 +67,6 @@ const SingleMap = ({ property }) => {
             </InfoWindow>
           )}
         </Marker>
-        );
       </GoogleMap>
     </div>
   );

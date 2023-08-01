@@ -32,27 +32,27 @@ import { openNotification } from "../../utils/ui";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 const DEFAULT_FORM_VALUES = {
-  name: "test name",
-  status: "followingSite",
+  name: "Test Name",
+  status: "Following Site",
   address: "123 L1",
-  city: "New Your",
-  country: "USA",
-  state: "florida",
+  city: "Dublin",
+  country: "Bladen",
+  state: "Florida",
   zipCode: 54000,
   censusTrackNumber: 1,
   loiDate: moment("11-11-2023"),
   contractDate: moment("10-05-2024"),
-  famOrSr: "family",
+  famOrSr: "Family",
   landSize: 1000,
   ami: 150,
   closingYear: "2026",
   startYear: "2024",
-  zoning: "zoningInPlace",
-  qctDda: "yes",
-  sitePlanApproval: "yes",
-  sitePlanningAgency: "test agency",
+  zoning: "Zoning in Place",
+  qctDda: "Yes",
+  sitePlanApproval: "Yes",
+  sitePlanningAgency: "Test Agency",
   percentage: "4%",
-  presentZoning: "test zoning",
+  presentZoning: "Test Zoning",
   units: 50,
   landPrice: 500000,
   landPricePerUnit: 10000,
@@ -77,7 +77,6 @@ const IntakeForm = () => {
   const navigate = useNavigate();
   const { loading, lastAddedProperty, error, properties, fetchedProperty } =
     useSelector((state) => state.property);
-  const [editedProperty, setEditedProperty] = useState();
   const [form] = Form.useForm();
   const [searchParams] = useSearchParams();
   const propertyId = searchParams.get("id");
@@ -85,16 +84,21 @@ const IntakeForm = () => {
 
   const onFinish = (values) => {
     if (propertyId && mode && mode === "edit") {
-      dispatch(updateProperty(propertyId, values)).then(() => {
-        openNotification("success", "Property Added Successfully!", "");
-        navigate("/mastersheet");
-      });
+      dispatch(
+        updateProperty(propertyId, values, () => {
+          openNotification("success", "Property Updated Successfully!", "");
+          navigate("/mastersheet");
+        })
+      );
     } else {
-      dispatch(addProperty(values)).then(() => {
-        form.resetFields();
-      });
+      dispatch(
+        addProperty(values, (data) => {
+          openNotification("success", "Property Added Successfully!", "");
+          navigate("/mastersheet");
+          form.resetFields();
+        })
+      );
     }
-    console.log("Success:", values);
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -132,7 +136,7 @@ const IntakeForm = () => {
           onFinishFailed={onFinishFailed}
           autoComplete="off"
           form={form}
-          // initialValues={editedProperty}
+          initialValues={DEFAULT_FORM_VALUES}
         >
           <Row>
             <Col span={24}>
@@ -847,7 +851,7 @@ const IntakeForm = () => {
                     >
                       Reset
                     </button>
-                    <Button htmlType="submit">
+                    <Button htmlType="submit" type="primary">
                       {mode && mode === "edit" ? "Update" : "Save Changes"}
                     </Button>
                   </div>

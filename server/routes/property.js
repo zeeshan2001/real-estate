@@ -257,6 +257,9 @@ router.get("/dashboard/data", async (req, res) => {
 
     const propertyStatusRecords = await Property.aggregate([
       {
+        $match: match,
+      },
+      {
         $group: {
           _id: "$status", // grouping by status
           count: { $sum: 1 }, // counting records for each status
@@ -278,6 +281,9 @@ router.get("/dashboard/data", async (req, res) => {
     ]);
 
     const financialChartData = await Property.aggregate([
+      {
+        $match: match,
+      },
       {
         $group: {
           _id: "$status",

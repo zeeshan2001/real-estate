@@ -67,7 +67,6 @@ const CreateNotes = () => {
 
   useEffect(() => {
     if (error) {
-      console.log("*error: ", error);
       openNotification("error", error, "");
     }
   }, [error]);

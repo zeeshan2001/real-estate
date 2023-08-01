@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState, Fragment, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { loginUser } from "../../redux/actions";
 import { Input, Button, Row, Col, Form } from "antd";
@@ -6,12 +6,13 @@ import Logo from "../../assets/images/logo@2x.png";
 import "./Login.css";
 import { openNotification } from "../../utils/ui";
 import Loading from "../../ui/Loading/Loading";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { error, loading, isLoggedIn } = useSelector((state) => state.auth);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const notificationRef = useRef(false);
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
@@ -32,15 +33,24 @@ const Login = () => {
     }
 
     const user = { username, password };
-    dispatch(loginUser(user)).then(() => {
-      navigate("/dashboard");
-    });
+    dispatch(loginUser(user));
   };
+
+  const handleForgotPassword = () => {};
 
   useEffect(() => {
     if (!error) return;
-    openNotification("error", "Error", error);
+    if (!notificationRef.current) {
+      notificationRef.current = true;
+      openNotification("error", "Error", error);
+    }
   }, [error]);
+
+  useEffect(() => {
+    return () => {
+      notificationRef.current = false;
+    };
+  }, []);
 
   return (
     <Fragment>
@@ -54,6 +64,7 @@ const Login = () => {
                 className="form-content"
                 labelCol={{ span: 24 }}
                 wrapperCol={{ span: 24 }}
+                onFinish={handleLogin}
               >
                 <Form.Item label="Username">
                   <Input
@@ -69,11 +80,16 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </Form.Item>
-                <Form.Item className="login-button">
-                  <Button onClick={handleLogin} type="default">
-                    Login
-                  </Button>
-                </Form.Item>
+                <div className="login-button-container">
+                  <div>
+                    {/* <Link onClick={handleForgotPassword}>Forgot Password</Link> */}
+                  </div>
+                  <div>
+                    <Button type="primary" htmlType="submit">
+                      Login
+                    </Button>
+                  </div>
+                </div>
               </Form>
             </div>
           </Loading>

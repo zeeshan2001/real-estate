@@ -21,7 +21,7 @@ const AppRoutes = () => {
           exact
           element={<Navigate to="/dashboard" replace />} // Redirect from "/" to "/login"
         />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" exact element={<Login />} />
         <Route exact path="/dashboard" element={<PrivateRoute />}>
           <Route exact path="/dashboard" element={<Dashboard />} />
         </Route>

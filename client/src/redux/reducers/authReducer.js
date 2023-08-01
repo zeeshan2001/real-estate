@@ -11,7 +11,7 @@ import {
 } from "../actions/actionTypes";
 
 const storedUser = getUser();
-console.log("*storedUser", storedUser);
+
 // Initial state for auth
 const initialState = {
   user: storedUser || null,

@@ -26,7 +26,7 @@ const SingleTab = () => {
         </Col>
         <Col xs={24} md={8} className="gutter-row full-height">
           <h3 className="info-heading">Map</h3>
-          <SingleMap property={fetchedProperty} />
+          {fetchedProperty && <SingleMap property={fetchedProperty} />}
         </Col>
         <Col xs={24} md={8} className="gutter-row full-height">
           <CreateNotes />
