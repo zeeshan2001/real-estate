@@ -2,7 +2,7 @@
   "name": "real-estate-dashboard",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "proxy": "https://rs-backend.onrender.com",
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
     "@react-google-maps/api": "^2.18.1",
