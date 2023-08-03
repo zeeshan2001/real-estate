@@ -50,9 +50,10 @@ const Financial = (props) => {
     percentage: ((item.totalGcFees / totalGcFees) * 100).toFixed(2),
   }));
 
-  const onPieClick = (data, index) => {
-    setActiveIndex(index);
+  const onPieClick = (openedPopup, data, index) => {
+    setActiveIndex(openedPopup);
     setActiveData(data);
+    console.log("*index: ", index, data);
   };
 
   return (
@@ -77,13 +78,13 @@ const Financial = (props) => {
                   <Cell
                     key={`cell-${index}`}
                     fill={COLORS[index % COLORS.length]}
-                    onClick={() => onPieClick(entry, index)}
+                    onClick={() => onPieClick("units", entry, index)}
                   />
                 ))}
               </Pie>
               <text
                 x={85}
-                y={95}
+                y={90}
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fill="#515151"
@@ -93,7 +94,7 @@ const Financial = (props) => {
               </text>
               <text
                 x={85}
-                y={115}
+                y={110}
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fill="#0E5574"
@@ -123,13 +124,13 @@ const Financial = (props) => {
                   <Cell
                     key={`cell-${index}`}
                     fill={COLORS[index % COLORS.length]}
-                    onClick={() => onPieClick(entry, index)}
+                    onClick={() => onPieClick("devFees", entry, index)}
                   />
                 ))}
               </Pie>
               <text
                 x={85}
-                y={95}
+                y={90}
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fill="#515151"
@@ -139,7 +140,7 @@ const Financial = (props) => {
               </text>
               <text
                 x={85}
-                y={115}
+                y={110}
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fill="#0E5574"
@@ -169,13 +170,13 @@ const Financial = (props) => {
                   <Cell
                     key={`cell-${index}`}
                     fill={COLORS[index % COLORS.length]}
-                    onClick={() => onPieClick(entry, index)}
+                    onClick={() => onPieClick("gcFees", entry, index)}
                   />
                 ))}
               </Pie>
               <text
                 x={85}
-                y={95}
+                y={90}
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fill="#515151"
@@ -185,7 +186,7 @@ const Financial = (props) => {
               </text>
               <text
                 x={85}
-                y={115}
+                y={110}
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fill="#0E5574"
@@ -208,22 +209,29 @@ const Financial = (props) => {
                         <div>
                           <strong>Name:</strong> {property.name}
                         </div>
-                        <div>
-                          <strong>Address:</strong>
-                          {property.address}, {property.city}, {property.state},{" "}
-                          {property.country}
-                        </div>
+                        {activeIndex === "units" && (
+                          <div>
+                            <strong>Units: </strong>
+                            {property.units}
+                          </div>
+                        )}
+                        {activeIndex === "devFees" && (
+                          <div>
+                            <strong>Dev Fees: </strong> ${property.devFees}
+                          </div>
+                        )}
+                        {activeIndex === "gcFees" && (
+                          <div>
+                            <strong>GC Fees: </strong> ${property.gcFees}
+                          </div>
+                        )}
                         <Divider className="m-10" />
                       </div>
                     </div>
                   ))}
                 </div>
               }
-              title={
-                <div className="info-heading">
-                  {activeData._id} - {activeData.count}
-                </div>
-              }
+              title={<div className="info-heading">{activeData._id}</div>}
               trigger="click"
               className="chart-popover-container"
               open={activeIndex !== null}

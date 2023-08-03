@@ -128,6 +128,12 @@ const IntakeForm = () => {
     }
   }, [form, fetchedProperty]);
 
+  useEffect(() => {
+    if (mode !== "edit") {
+      form.resetFields();
+    }
+  }, [mode]);
+
   return (
     <div className="body-container">
       <Loading loading={loading}>
@@ -136,12 +142,12 @@ const IntakeForm = () => {
           onFinishFailed={onFinishFailed}
           autoComplete="off"
           form={form}
-          initialValues={DEFAULT_FORM_VALUES}
+          // initialValues={DEFAULT_FORM_VALUES}
         >
           <Row>
             <Col span={24}>
               <div className="intake-form-header">
-                <div className="intake-form-heading">IntakeForm</div>
+                <div className="intake-form-heading">Intake Form</div>
                 <div className="icon-wrapper print-icon" onClick={handlePrint}>
                   <img src={printIcon} alt="Print Icon" />
                 </div>
@@ -228,7 +234,7 @@ const IntakeForm = () => {
                 </Col>
                 <Col xs={24} md={6}>
                   <div className="input-label">
-                    <span className="star-error">*</span>Country
+                    <span className="star-error">*</span>County
                   </div>
                   <Form.Item
                     name="country"

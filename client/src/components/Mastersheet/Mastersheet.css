@@ -13,22 +13,37 @@
     font-size: 20px;
     font-weight: 600;
 }
-.mastersheet-header .icon-wrapper {
+.action-buttons-container .icon-wrapper {
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    padding: 3px;
+    width: 35px;
+    height: 35px;
+    padding: 10px;
     border-radius: 5px;
     background: #1BAEDC;
-    margin-right: 10px;
+    margin-right: 15px;
     border: 1px solid #1C9FC9;
     cursor: pointer;
 }
-.mastersheet-header .delete-icon {
+.action-buttons-container .delete-icon {
     background: #D03838;
     border: 1px solid #D03838;
 }
-.mastersheet-header .print-icon {
+.action-buttons-container .print-icon {
     border: 1px solid #BEC1C4;
     background: #fff;
+}
+.action-buttons-container {
+    display: flex;
+    justify-content: center;
+}
+.action-buttons-container img {
+    width: 35px;
+}
+.ant-modal-confirm-btns .ant-btn-dangerous {
+    border: none !important;
+    margin-inline-start: 0px !important;
+}
+.ant-modal-confirm-btns .ant-btn-default:hover {
+    color: none !important;
+    border-color: none !important;
 }

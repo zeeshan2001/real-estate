@@ -31,7 +31,7 @@ const Portfolio = () => {
         </Row>
         <Row gutter={16}>
           <Col xs={24} md={12} className="gutter-row full-height">
-            <h3 className="info-heading">Finacial</h3>
+            <h3 className="info-heading">Financial</h3>
             <Financial portfolio={portfolio} chartData={financialChartData} />
           </Col>
           <Col xs={24} md={12} className="gutter-row full-height">

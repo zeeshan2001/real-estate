@@ -300,6 +300,9 @@ router.get("/dashboard/data", async (req, res) => {
               city: "$city",
               state: "$state",
               country: "$country",
+              devFees: "$devFees",
+              gcFees: "$gcFees",
+              units: "$units",
               // add more properties if needed...
             },
           },
@@ -338,6 +341,8 @@ router.post("/dashboard/multi", async (req, res) => {
         $group: {
           _id: null,
           totalUnits: { $sum: "$units" },
+          totalLandPrice: { $sum: "$landPrice" },
+          totalDefferedFees: { $sum: "$defferedFees" },
           avgPricePerUnit: { $avg: "$landPricePerUnit" },
           totalTDC: { $sum: "$tdc" },
           avgTDCPerUnit: { $avg: "$tdcPerUnit" },

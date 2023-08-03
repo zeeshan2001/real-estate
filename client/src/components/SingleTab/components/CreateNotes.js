@@ -64,6 +64,9 @@ const CreateNotes = () => {
   const onFinishFailed = (values) => {
     console.log("*values: ", values);
   };
+  const handleDropboxClick = () => {
+    window.open("https://www.dropbox.com", "_blank");
+  };
 
   useEffect(() => {
     if (error) {
@@ -77,10 +80,22 @@ const CreateNotes = () => {
         <div className="sticky-notes-heading">
           <h3 className="notes-info-heading">Sticky Notes</h3>
         </div>
-        <div className="notes-icon-wrapper notes-plus-icon" onClick={showModal}>
-          <Tooltip placement="topLeft" title={<span>Create Note</span>}>
-            <img src={PlusIcon} alt="Plus Icon" />
-          </Tooltip>
+        <div className="notes-button-container">
+          <div
+            className="notes-icon-wrapper notes-plus-icon"
+            onClick={showModal}
+          >
+            <Tooltip placement="topLeft" title={<span>Create Note</span>}>
+              <img src={PlusIcon} alt="Plus Icon" />
+            </Tooltip>
+          </div>
+          <Button
+            className="dropbox-button"
+            type="primary"
+            onClick={handleDropboxClick}
+          >
+            Dropbox
+          </Button>
         </div>
       </div>
       <Modal

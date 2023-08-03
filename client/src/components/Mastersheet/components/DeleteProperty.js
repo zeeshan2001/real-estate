@@ -1,6 +1,6 @@
 import React from "react";
 import { ExclamationCircleFilled } from "@ant-design/icons";
-import { Button, Modal } from "antd";
+import { Button, Modal, Tooltip } from "antd";
 import deleteIcon from "../../../assets/icons/ico-delete.svg";
 import { useDispatch } from "react-redux";
 import { deleteProperty } from "../../../redux/actions";
@@ -17,7 +17,7 @@ const DeleteProperty = ({ selectedRowKeys }) => {
       title: "Delete",
       icon: <ExclamationCircleFilled />,
       content: "Are you sure you want to delete?",
-      okText: "Yes",
+      okText: <Button type="primary">Yes</Button>,
       okType: "danger",
       cancelText: "No",
       onOk() {
@@ -37,7 +37,9 @@ const DeleteProperty = ({ selectedRowKeys }) => {
   };
   return (
     <div className="icon-wrapper delete-icon" onClick={showDeleteConfirm}>
-      <img src={deleteIcon} alt="Delete Icon" />
+      <Tooltip placement="topLeft" title={<span>Delete</span>}>
+        <img src={deleteIcon} alt="Delete Icon" />
+      </Tooltip>
     </div>
   );
 };

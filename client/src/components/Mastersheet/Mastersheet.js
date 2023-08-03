@@ -1,4 +1,4 @@
-import { Button, Row, Col, Table } from "antd";
+import { Button, Row, Col, Table, Tooltip } from "antd";
 import { useEffect, useState } from "react";
 import "./Mastersheet.css";
 import clearIcon from "../../assets/icons/ico-clear.svg";
@@ -57,7 +57,7 @@ const columns = [
     sorter: (a, b) => a.city.localeCompare(b.city),
   },
   {
-    title: "Country",
+    title: "County",
     dataIndex: "country",
     sorter: (a, b) => a.country.localeCompare(b.country),
   },
@@ -129,11 +129,13 @@ const columns = [
   {
     title: "AMI",
     dataIndex: "ami",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.ami - b.ami,
   },
   {
     title: "Land Size (Acres)",
     dataIndex: "landSize",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.landSize - b.landSize,
   },
   {
@@ -149,86 +151,103 @@ const columns = [
   {
     title: "Units",
     dataIndex: "units",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.units - b.units,
   },
   {
     title: "Land Price",
     dataIndex: "landPrice",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.landPrice - b.landPrice,
   },
   {
     title: "Land Price/Unit",
     dataIndex: "landPricePerUnit",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.landPricePerUnit - b.landPricePerUnit,
   },
   {
     title: "TDC",
     dataIndex: "tdc",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.tdc - b.tdc,
   },
   {
     title: "TDC/Unit",
     dataIndex: "tdcPerUnit",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.tdcPerUnit - b.tdcPerUnit,
   },
   {
     title: "GC Fees",
     dataIndex: "gcFees",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.gcFees - b.gcFees,
   },
   {
     title: "GC Fees/Unit",
     dataIndex: "gcFeesPerUnit",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.gcFeesPerUnit - b.gcFeesPerUnit,
   },
   {
     title: "Dev Fees",
     dataIndex: "devFees",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.devFees - b.devFees,
   },
   {
     title: "Dev Fees/Unit",
     dataIndex: "devFeesPerUnit",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.devFeesPerUnit - b.devFeesPerUnit,
   },
   {
     title: "Deffered",
     dataIndex: "defferedFees",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.defferedFees - b.defferedFees,
   },
   {
     title: "Deffered Fees/Unit",
     dataIndex: "defferedFeesPerUnit",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.defferedFeesPerUnit - b.defferedFeesPerUnit,
   },
   {
     title: "Total AL Fees",
     dataIndex: "totalAlFees",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.totalAlFees - b.totalAlFees,
   },
   {
     title: "Hard Debt",
     dataIndex: "hardDebt",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.hardDebt - b.hardDebt,
   },
   {
     title: "Soft Debt",
     dataIndex: "softDebt",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.softDebt - b.softDebt,
   },
   {
     title: "LIHTC Equity",
     dataIndex: "lihtcEquity",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.lihtcEquity - b.lihtcEquity,
   },
   {
-    title: "TotalSources",
+    title: "Total Sources",
     dataIndex: "totalSources",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.totalSources - b.totalSources,
   },
   {
     title: "NOI",
     dataIndex: "noi",
+    render: (text) => text.toLocaleString(),
     sorter: (a, b) => a.noi - b.noi,
   },
 ];
@@ -332,16 +351,24 @@ const Mastersheet = () => {
       <Row>
         <Col span={24}>
           <div className="mastersheet-header">
-            <div className="mastersheet-heading">Mastersheet</div>
+            <div className="mastersheet-heading">Master Sheet</div>
+          </div>
+          <div className="action-buttons-container">
             <div>
               <div className="icon-wrapper">
-                <img src={clearIcon} alt="Clear Icon" onClick={handleClear} />
+                <Tooltip placement="topLeft" title={<span>Clear</span>}>
+                  <img src={clearIcon} alt="Clear Icon" onClick={handleClear} />
+                </Tooltip>
               </div>
               <div className="icon-wrapper" onClick={handleView}>
-                <img src={viewIcon} alt="View Icon" />
+                <Tooltip placement="topLeft" title={<span>View</span>}>
+                  <img src={viewIcon} alt="View Icon" />
+                </Tooltip>
               </div>
               <div className="icon-wrapper" onClick={handleEdit}>
-                <img src={editIcon} alt="Edit Icon" />
+                <Tooltip placement="topLeft" title={<span>Edit</span>}>
+                  <img src={editIcon} alt="Edit Icon" />
+                </Tooltip>
               </div>
               {/* <div className="icon-wrapper delete-icon">
                 <img src={deleteIcon} alt="Delete Icon" />
@@ -350,7 +377,9 @@ const Mastersheet = () => {
                 <DeleteProperty selectedRowKeys={selectedRowKeys} />
               )}
               <div className="icon-wrapper print-icon" onClick={handlePrint}>
-                <img src={printIcon} alt="Print Icon" />
+                <Tooltip placement="topLeft" title={<span>Print</span>}>
+                  <img src={printIcon} alt="Print Icon" />
+                </Tooltip>
               </div>
             </div>
           </div>

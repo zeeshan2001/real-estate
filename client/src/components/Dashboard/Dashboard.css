@@ -11,7 +11,18 @@
     cursor: pointer;
 }
 
+.ant-tabs-tab {
+    background: #041f3e !important;
+    color: #fff !important;
+}
 
+.ant-tabs-tab.ant-tabs-tab-active {
+    background: #54A912 !important;
+    color: #fff !important;
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #fff !important;
+}
 @media (max-width: 600px) {
     
 }

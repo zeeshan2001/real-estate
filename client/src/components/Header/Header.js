@@ -127,7 +127,7 @@ const Header = () => {
                     }`}
                     alt="Mastersheet"
                   />
-                  <span>Mastersheet</span>
+                  <span>Master Sheet</span>
                 </button>
               </Link>
               <Link
