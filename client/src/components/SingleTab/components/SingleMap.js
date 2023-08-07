@@ -10,7 +10,6 @@ const SingleMap = ({ property }) => {
     height: "550px",
     width: "100%",
   };
-
   const stateCoordinates = STATES.find(
     (item) => item.value === property?.state
   );
@@ -39,6 +38,7 @@ const SingleMap = ({ property }) => {
   };
 
   const handleMarkerDoubleClick = () => {
+    console.log("*property: ", property);
     if (property?._id) {
       dispatch(selectProperties([property._id]));
       navigate(`/dashboard`);
