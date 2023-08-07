@@ -61,7 +61,7 @@ const MultiMap = ({ data }) => {
               }}
               position={stateCoordinates?.coordinates}
               onClick={() => handleMarkerClick(state)}
-              onDblClick={() => handleMarkerDoubleClick(state.state)}
+              onDblClick={() => handleMarkerDoubleClick(state)}
             >
               {activeMarker === state && (
                 <InfoWindow onCloseClick={() => setActiveMarker(null)}>

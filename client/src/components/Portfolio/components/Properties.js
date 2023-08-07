@@ -26,7 +26,7 @@ const Properties = (props) => {
   return (
     <div className="properties-container">
       <Row gutter={16}>
-        <Col xs={24} sm={24} md={16}>
+        <Col xs={24} sm={24} md={12}>
           <Row>
             <Col span={24}>
               <ResponsiveContainer width="100%" height="100%">
@@ -117,7 +117,7 @@ const Properties = (props) => {
             </Col>
           </Row>
         </Col>
-        <Col xs={24} sm={24} md={8}>
+        <Col xs={24} sm={24} md={12}>
           {portfolio?.properties?.map((property) => {
             return (
               <Row key={property._id}>
