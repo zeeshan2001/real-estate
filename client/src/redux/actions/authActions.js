@@ -25,7 +25,10 @@ export const loginUser = (user) => {
       }
 
       // Send the API login to login the user
-      const response = await axios.post("/api/auth/login", user);
+      const response = await axios.post(
+        "https://rs-backend.onrender.com/api/auth/login",
+        user
+      );
 
       // Dispatch the login success action with the response data
       dispatch({

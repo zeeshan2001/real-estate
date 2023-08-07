@@ -19,7 +19,10 @@ export const addStickyNote = (data, onSuccessCallback = null) => {
       dispatch({ type: ADD_NOTES_REQUEST });
 
       // Send the API request to add property
-      const response = await axios.post("/api/stickynotes/add", data);
+      const response = await axios.post(
+        "https://rs-backend.onrender.com/api/stickynotes/add",
+        data
+      );
 
       // Dispatch the register success action with the response data
       dispatch({
@@ -45,7 +48,10 @@ export const updateStickyNote = (data, onSuccessCallback = null) => {
   return async (dispatch) => {
     try {
       dispatch({ type: SET_UPDATE_NOTE_REQUEST });
-      const response = await axios.put(`/api/stickynotes/update`, data);
+      const response = await axios.put(
+        `https://rs-backend.onrender.com/api/stickynotes/update`,
+        data
+      );
       dispatch({
         type: SET_UPDATE_NOTE_SUCCESS,
         payload: response.data,
@@ -72,7 +78,7 @@ export const fetchStickyNoteByProperty = (data) => {
 
       // Send the API request to fetch property
       const response = await axios.get(
-        `/api/stickynotes/propertyStickyNotes`,
+        `https://rs-backend.onrender.com/api/stickynotes/propertyStickyNotes`,
         data
       );
 

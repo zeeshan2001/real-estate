@@ -21,7 +21,9 @@ export const fetchUsers = () => {
     try {
       dispatch({ type: SET_USERS_REQUEST });
       // Send the API request to fetch users
-      const response = await axios.get("/api/users");
+      const response = await axios.get(
+        "https://rs-backend.onrender.com/api/users"
+      );
       dispatch({
         type: SET_USERS_SUCCESS,
         payload: response.data,
@@ -45,7 +47,10 @@ export const addUser = (user, onSuccessCallback = null) => {
       dispatch({ type: SET_ADD_USER_REQUEST });
 
       // Send the API request to create the user
-      const response = await axios.post("/api/auth/addUser", user);
+      const response = await axios.post(
+        "https://rs-backend.onrender.com/api/auth/addUser",
+        user
+      );
 
       // Dispatch the register success action with the response data
       dispatch({
@@ -71,7 +76,10 @@ export const updateUser = (data, onSuccessCallback = null) => {
   return async (dispatch) => {
     try {
       dispatch({ type: SET_UPDATE_USER_REQUEST });
-      const response = await axios.put(`/api/users/update`, data);
+      const response = await axios.put(
+        `https://rs-backend.onrender.com/api/users/update`,
+        data
+      );
       dispatch({
         type: SET_UPDATE_USER_SUCCESS,
         payload: response.data,
@@ -95,7 +103,10 @@ export const deleteUser = (data) => {
     try {
       dispatch({ type: SET_DELETE_USER_REQUEST });
       // Send the API request to DELETE user
-      const response = await axios.delete(`/api/users/delete`, data);
+      const response = await axios.delete(
+        `https://rs-backend.onrender.com/api/users/delete`,
+        data
+      );
       dispatch({
         type: SET_DELETE_USER_SUCCESS,
         payload: response.data,
