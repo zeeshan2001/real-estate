@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
 const propertyRoutes = require("./routes/property");
 const stickynoteRoutes = require("./routes/stickynotes");
+const userRoutes = require("./routes/users");
 
 // MongoDB connection
 mongoose
@@ -20,6 +21,7 @@ app.use(cors());
 app.use(express.json()); // It's important to use this line to be able parse incoming request bodies
 
 app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
 app.use("/api/property", propertyRoutes);
 app.use("/api/stickynotes", stickynoteRoutes);
 

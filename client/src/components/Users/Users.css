@@ -1,0 +1,9 @@
+.user-delete-button {
+    background: #D03838 !important;
+    color: #fff;
+    font-weight: 600;
+}
+.user-add-button {
+    display: flex;
+    justify-content: flex-end;
+}

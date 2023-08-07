@@ -6,7 +6,6 @@ const stickyNoteSchema = new Schema({
   time: { type: String, required: true },
   propertyId: { type: Schema.Types.ObjectId, ref: "Property", required: true },
   userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
-  contact: { type: String, required: true },
   description: { type: String, required: true },
   //   filePath: { type: String, required: true },
   //   sharedLink: { type: String },

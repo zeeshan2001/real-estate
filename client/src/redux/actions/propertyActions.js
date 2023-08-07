@@ -33,10 +33,7 @@ export const addProperty = (data, onSuccessCallback = null) => {
       dispatch({ type: ADD_PROPERTY_REQUEST });
 
       // Send the API request to add property
-      const response = await axios.post(
-        "https://rs-backend.onrender.com/api/property/add",
-        data
-      );
+      const response = await axios.post("/api/property/add", data);
 
       // Dispatch the register success action with the response data
       dispatch({
@@ -65,10 +62,7 @@ export const updateProperty = (id, data, onSuccessCallback = null) => {
       dispatch({ type: UPDATE_PROPERTY_REQUEST });
 
       // Send the API request to UPDATE property
-      const response = await axios.put(
-        `https://rs-backend.onrender.com/api/property/update/${id}`,
-        data
-      );
+      const response = await axios.put(`/api/property/update/${id}`, data);
 
       // Dispatch the register success action with the response data
       dispatch({
@@ -97,9 +91,7 @@ export const fetchProperties = () => {
       dispatch({ type: FETCH_PROPERTIES_REQUEST });
 
       // Send the API request to fetch properties
-      const response = await axios.get(
-        "https://rs-backend.onrender.com/api/property/getAll"
-      );
+      const response = await axios.get("/api/property/getAll");
 
       // Dispatch the register success action with the response data
       dispatch({
@@ -125,9 +117,7 @@ export const fetchProperty = (propertyId) => {
       dispatch({ type: FETCH_PROPERTY_REQUEST });
 
       // Send the API request to fetch property
-      const response = await axios.get(
-        `https://rs-backend.onrender.com/api/property/${propertyId}`
-      );
+      const response = await axios.get(`/api/property/${propertyId}`);
 
       // Dispatch the register success action with the response data
       dispatch({
@@ -153,10 +143,7 @@ export const fetchDashboardData = (data) => {
       dispatch({ type: SET_DASHBOARD_DATA_REQUEST });
 
       // Send the API request to fetch property
-      const response = await axios.get(
-        `https://rs-backend.onrender.com/api/property/dashboard/data`,
-        data
-      );
+      const response = await axios.get(`/api/property/dashboard/data`, data);
 
       // Dispatch the register success action with the response data
       dispatch({
@@ -182,10 +169,7 @@ export const fetchMultiTabData = (data) => {
       dispatch({ type: SET_MULTI_TAB_DATA_REQUEST });
 
       // Send the API request to fetch property
-      const response = await axios.post(
-        `https://rs-backend.onrender.com/api/property/dashboard/multi`,
-        data
-      );
+      const response = await axios.post(`/api/property/dashboard/multi`, data);
 
       // Dispatch the register success action with the response data
       dispatch({
@@ -211,10 +195,7 @@ export const deleteProperty = (data) => {
       dispatch({ type: DELETE_PROPERTY_REQUEST });
 
       // Send the API request to DELETE property
-      const response = await axios.delete(
-        `https://rs-backend.onrender.com/api/property/delete`,
-        data
-      );
+      const response = await axios.delete(`/api/property/delete`, data);
 
       // Dispatch the register success action with the response data
       dispatch({

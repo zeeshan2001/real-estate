@@ -1,17 +1,26 @@
-import React, { memo } from "react";
-import { Row, Col, Collapse, Empty } from "antd";
+import React, { memo, useEffect } from "react";
+import { Row, Col, Collapse, Empty, Button } from "antd";
 import iconPlus from "../../../assets/icons/ico-max@2x.png";
 import iconMinus from "../../../assets/icons/ico-min@2x.png";
 import { useSelector } from "react-redux";
 import moment from "moment";
 
-const StickyNotes = () => {
+const StickyNotes = ({ form, setMode, setModalVisible }) => {
   const { propertyStickNotes } = useSelector((state) => state.stickynotes);
+  const { user } = useSelector((state) => state.auth);
   const panelStyle = {
     marginBottom: 10,
     background: "linear-gradient(180deg, #FFE38D 0%, #FFE38D 100%)",
     borderRadius: "2px",
     border: "none",
+  };
+
+  const handleEdit = (record) => {
+    const recordClone = { ...record };
+    recordClone["date"] = moment(record["date"]);
+    form.setFieldsValue(recordClone);
+    setMode("edit");
+    setModalVisible(true);
   };
 
   const getItems = (panelStyle) => {
@@ -22,7 +31,7 @@ const StickyNotes = () => {
           <div className="collapse-header">
             <div className="note-header-left">
               <strong>{note.userId.username} </strong>
-              created this deal
+              created this note
             </div>
             <div className="note-header-right fs-12 fw-500">
               <span>{moment(note.date).format("D MMM")} </span>
@@ -30,7 +39,18 @@ const StickyNotes = () => {
             </div>
           </div>
         ),
-        children: <p>{note.description}</p>,
+        children: (
+          <>
+            <p>{note.description}</p>
+            {note?.userId?.username === user.username && (
+              <div className="note-edit-btn">
+                <Button type="primary" onClick={() => handleEdit(note)}>
+                  Edit
+                </Button>
+              </div>
+            )}
+          </>
+        ),
         style: panelStyle,
       }));
     } else {
@@ -75,4 +95,4 @@ const StickyNotes = () => {
   );
 };
 
-export default memo(StickyNotes);
+export default StickyNotes;

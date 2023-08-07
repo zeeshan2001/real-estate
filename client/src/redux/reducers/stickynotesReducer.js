@@ -3,6 +3,9 @@ import {
   ADD_NOTES_REQUEST,
   ADD_NOTES_SUCCESS,
   ADD_NOTES_FAILURE,
+  SET_UPDATE_NOTE_REQUEST,
+  SET_UPDATE_NOTE_SUCCESS,
+  SET_UPDATE_NOTE_FAILURE,
   SET_PROPERTY_NOTES_REQUEST,
   SET_PROPERTY_NOTES_SUCCESS,
   SET_PROPERTY_NOTES_FAILURE,
@@ -40,6 +43,29 @@ const stickynotesReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload,
       };
+    case SET_UPDATE_NOTE_REQUEST:
+      return {
+        ...state,
+        loading: true,
+        error: null,
+      };
+    case SET_UPDATE_NOTE_SUCCESS:
+      return {
+        ...state,
+        propertyStickNotes: manageStickyNotes(
+          "update",
+          state.propertyStickNotes,
+          action.payload
+        ),
+        loading: false,
+        error: null,
+      };
+    case SET_UPDATE_NOTE_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
     case SET_PROPERTY_NOTES_REQUEST:
       return {
         ...state,
@@ -65,3 +91,18 @@ const stickynotesReducer = (state = initialState, action) => {
 };
 
 export default stickynotesReducer;
+
+function manageStickyNotes(action, notes, record) {
+  let notesClone = [...notes];
+  if (action === "add" && record) {
+    notesClone.push(record);
+  }
+  if (action === "update" && record) {
+    notesClone = notes.map((note) => (note._id === record._id ? record : note));
+  }
+  if (action === "delete" && record) {
+    notesClone = notes.filter((note) => note._id !== record);
+  }
+  console.log(action, notes, record, notesClone);
+  return notesClone;
+}

@@ -17,9 +17,10 @@ const DeleteProperty = ({ selectedRowKeys }) => {
       title: "Delete",
       icon: <ExclamationCircleFilled />,
       content: "Are you sure you want to delete?",
-      okText: <Button type="primary">Yes</Button>,
+      okText: "Yes",
       okType: "danger",
       cancelText: "No",
+      className: "confrim-delete",
       onOk() {
         if (selectedRowKeys.length > 0) {
           dispatch(deleteProperty({ data: { ids: selectedRowKeys } })).then(

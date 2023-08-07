@@ -18,8 +18,6 @@ const Properties = (props) => {
     percentage: ((item.count / total) * 100).toFixed(2),
   }));
 
-  console.log("*data: ", dataWithPercentage);
-
   const onPieClick = (data, index) => {
     setActiveIndex(index);
     setActiveData(data);
@@ -28,11 +26,11 @@ const Properties = (props) => {
   return (
     <div className="properties-container">
       <Row gutter={16}>
-        <Col xs={24} sm={24} md={12}>
+        <Col xs={24} sm={24} md={16}>
           <Row>
             <Col span={24}>
               <ResponsiveContainer width="100%" height="100%">
-                <PieChart width={210} height={400}>
+                <PieChart width={500} height={700}>
                   <Pie
                     data={dataWithPercentage}
                     cx={170}
@@ -119,7 +117,7 @@ const Properties = (props) => {
             </Col>
           </Row>
         </Col>
-        <Col xs={24} sm={24} md={12}>
+        <Col xs={24} sm={24} md={8}>
           {portfolio?.properties?.map((property) => {
             return (
               <Row key={property._id}>

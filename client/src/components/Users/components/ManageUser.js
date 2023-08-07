@@ -3,38 +3,44 @@ import { Col, Input, Modal, Row, Select, Button, Divider, Form } from "antd";
 
 import Loading from "../../../ui/Loading/Loading";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../../../redux/actions";
+import { addUser, updateUser } from "../../../redux/actions";
 import { openNotification } from "../../../utils/ui";
 
-const CreateNotes = ({ isModalOpen, setIsModalOpen }) => {
-  const { loading, error } = useSelector((state) => state.auth);
-  const [form] = Form.useForm();
+const ManageUser = ({ mode, form, setMode, modalVisible, setModalVisible }) => {
+  const { loading, error } = useSelector((state) => state.users);
+
   const dispatch = useDispatch();
 
   const handleOk = () => {
-    setIsModalOpen(false);
+    setModalVisible(false);
+    setMode(null);
     form.resetFields();
   };
   const handleCancel = () => {
-    setIsModalOpen(false);
+    setModalVisible(false);
+    setMode(null);
     form.resetFields();
   };
 
   const onFinish = (values) => {
-    let formData = new FormData();
-    // formData.append("file", values.file.file);
-    // formData.append("date", moment(currentDate).format("YYYY-MM-DD"));
-    // formData.append("time", moment().format("hh:mm A"));
-    // formData.append("propertyId", values.propertyId);
-    // formData.append("userId", user._id);
-    // formData.append("contact", values.contact);
-    // formData.append("description", values.description);
-
-    dispatch(addUser(values)).then(() => {
-      setIsModalOpen(false);
-      form.resetFields();
-    });
+    if (mode === "edit") {
+      dispatch(
+        updateUser(values, (data) => {
+          openNotification("success", "User Updated Successfully!", "");
+          setModalVisible(false);
+        })
+      );
+    } else {
+      dispatch(
+        addUser(values, (data) => {
+          openNotification("success", "User Added Successfully!", "");
+          setModalVisible(false);
+          form.resetFields();
+        })
+      );
+    }
   };
+
   const onFinishFailed = (values) => {
     console.log("*values: ", values);
   };
@@ -48,8 +54,8 @@ const CreateNotes = ({ isModalOpen, setIsModalOpen }) => {
   return (
     <>
       <Modal
-        title="Add User"
-        open={isModalOpen}
+        title={mode === "edit" ? "Edit User" : "Add User"}
+        open={modalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
         className="create-notes-modal"
@@ -66,6 +72,11 @@ const CreateNotes = ({ isModalOpen, setIsModalOpen }) => {
             <Row>
               <Col className="mt-15" span={24}>
                 <div className="input-label">Username</div>
+                <Form.Item
+                  name="_id"
+                  hidden
+                  initialValue={form.getFieldValue("_id")}
+                ></Form.Item>
                 <Form.Item
                   name="username"
                   rules={[
@@ -125,7 +136,7 @@ const CreateNotes = ({ isModalOpen, setIsModalOpen }) => {
                       Close
                     </button>
                     <Button type="primary" htmlType="submit">
-                      Save Changes
+                      {mode === "edit" ? "Update Changes" : "Save Changes"}
                     </Button>
                   </div>
                 </div>
@@ -138,4 +149,4 @@ const CreateNotes = ({ isModalOpen, setIsModalOpen }) => {
     </>
   );
 };
-export default memo(CreateNotes);
+export default memo(ManageUser);

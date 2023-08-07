@@ -1,4 +1,4 @@
-export { addUser, loginUser, logoutUser } from "./authActions";
+export { loginUser, logoutUser } from "./authActions";
 export {
   addProperty,
   updateProperty,
@@ -9,4 +9,10 @@ export {
   fetchDashboardData,
 } from "./propertyActions";
 
-export { addStickyNote, fetchStickyNoteByProperty } from "./stickynotesAction";
+export { addUser, updateUser, deleteUser, fetchUsers } from "./userActions";
+
+export {
+  addStickyNote,
+  updateStickyNote,
+  fetchStickyNoteByProperty,
+} from "./stickynotesAction";

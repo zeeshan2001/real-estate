@@ -25,10 +25,7 @@ export const loginUser = (user) => {
       }
 
       // Send the API login to login the user
-      const response = await axios.post(
-        "https://rs-backend.onrender.com/api/auth/login",
-        user
-      );
+      const response = await axios.post("/api/auth/login", user);
 
       // Dispatch the login success action with the response data
       dispatch({
@@ -40,35 +37,6 @@ export const loginUser = (user) => {
       console.log("*error: ", error);
       dispatch({
         type: LOGIN_USER_FAILURE,
-        payload: error.response.data.message,
-      });
-    }
-  };
-};
-
-// Action Creator for registering a user
-export const addUser = (user) => {
-  return async (dispatch) => {
-    try {
-      // Dispatch the register request action
-      dispatch({ type: SET_ADD_USER_REQUEST });
-
-      // Send the API request to create the user
-      const response = await axios.post(
-        "https://rs-backend.onrender.com/api/auth/addUser",
-        user
-      );
-
-      // Dispatch the register success action with the response data
-      dispatch({
-        type: SET_ADD_USER_SUCCESS,
-        payload: response.data,
-      });
-    } catch (error) {
-      // Dispatch the register failure action with the error message
-      console.log("*error: ", error);
-      dispatch({
-        type: SET_ADD_USER_FAILURE,
         payload: error.response.data.message,
       });
     }

@@ -39,11 +39,11 @@
 .action-buttons-container img {
     width: 35px;
 }
-.ant-modal-confirm-btns .ant-btn-dangerous {
+/* .ant-modal-confirm-btns .ant-btn-dangerous {
     border: none !important;
     margin-inline-start: 0px !important;
 }
 .ant-modal-confirm-btns .ant-btn-default:hover {
     color: none !important;
     border-color: none !important;
-}
+} */

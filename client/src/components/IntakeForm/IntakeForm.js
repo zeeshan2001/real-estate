@@ -77,6 +77,7 @@ const IntakeForm = () => {
   const navigate = useNavigate();
   const { loading, lastAddedProperty, error, properties, fetchedProperty } =
     useSelector((state) => state.property);
+  const { user } = useSelector((state) => state.auth);
   const [form] = Form.useForm();
   const [searchParams] = useSearchParams();
   const propertyId = searchParams.get("id");
@@ -93,7 +94,7 @@ const IntakeForm = () => {
     } else {
       dispatch(
         addProperty(values, (data) => {
-          openNotification("success", "Property Added Successfully!", "");
+          openNotification("success", "Property Created Successfully!", "");
           navigate("/mastersheet");
           form.resetFields();
         })

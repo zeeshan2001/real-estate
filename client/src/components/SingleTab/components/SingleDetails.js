@@ -154,4 +154,4 @@ const SingleDetails = (props) => {
   );
 };
 
-export default memo(SingleDetails);
+export default SingleDetails;

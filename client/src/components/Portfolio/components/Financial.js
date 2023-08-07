@@ -53,7 +53,6 @@ const Financial = (props) => {
   const onPieClick = (openedPopup, data, index) => {
     setActiveIndex(openedPopup);
     setActiveData(data);
-    console.log("*index: ", index, data);
   };
 
   return (

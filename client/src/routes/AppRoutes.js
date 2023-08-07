@@ -8,6 +8,7 @@ import {
 import IntakeForm from "../components/IntakeForm/IntakeForm";
 import Dashboard from "../components/Dashboard/Dashboard";
 import Login from "../components/Login/Login";
+import Users from "../components/Users/Users";
 import Mastersheet from "../components/Mastersheet/Mastersheet";
 import NotFound from "../components/NotFound/NotFound";
 import PrivateRoute from "./PrivateRoute";
@@ -30,6 +31,9 @@ const AppRoutes = () => {
         </Route>
         <Route exact path="/intake-form" element={<PrivateRoute />}>
           <Route exact path="/intake-form" element={<IntakeForm />} />
+        </Route>
+        <Route exact path="/users" element={<PrivateRoute />}>
+          <Route exact path="/users" element={<Users />} />
         </Route>
         <Route exact path="/" element={<PrivateRoute />}>
           <Route exact path="/" element={<Dashboard />} />

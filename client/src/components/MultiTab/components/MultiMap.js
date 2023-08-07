@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import { DEAL_STATUSES, STATES } from "../../../constants/common";
+import { selectProperties } from "../../../redux/actions";
 
 const MultiMap = ({ data }) => {
   const mapStyles = {
@@ -16,6 +17,7 @@ const MultiMap = ({ data }) => {
   };
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [activeMarker, setActiveMarker] = useState(null);
 
@@ -24,7 +26,10 @@ const MultiMap = ({ data }) => {
   };
 
   const handleMarkerDoubleClick = (state) => {
-    console.log(`Double-clicked on ${state}`);
+    if (state?._id) {
+      dispatch(selectProperties([state._id]));
+      navigate(`/dashboard`);
+    }
   };
 
   return (

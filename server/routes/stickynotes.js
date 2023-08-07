@@ -36,7 +36,7 @@ router.get("/propertyStickyNotes", async (req, res) => {
 router.post("/add", upload.single("file"), async (req, res) => {
   try {
     // const file = req.file;
-    const { date, time, propertyId, userId, contact, description } = req.body;
+    const { date, time, propertyId, userId, description } = req.body;
     // const response = await fetch(
     //   "https://content.dropboxapi.com/2/files/upload",
     //   {
@@ -97,7 +97,6 @@ router.post("/add", upload.single("file"), async (req, res) => {
       time,
       propertyId,
       userId,
-      contact,
       description,
       //   filePath: `/myfiles/${file.originalname}`,
       //   sharedLink: sharedLinkData.url,
@@ -108,6 +107,26 @@ router.post("/add", upload.single("file"), async (req, res) => {
     res.json(savedNote);
   } catch (err) {
     res.status(500).json({ message: err.message });
+  }
+});
+
+//Update sticky note route, route: /api/stickynotes/update
+router.put("/update", upload.single("file"), async (req, res) => {
+  try {
+    const updateData = { ...req.body };
+    if (updateData?._id) {
+      const updatedNote = await StickyNote.findByIdAndUpdate(
+        updateData._id,
+        updateData,
+        {
+          new: true,
+        }
+      );
+      res.json(updatedNote);
+    }
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).json({ message: "Server Error" });
   }
 });
 

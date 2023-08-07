@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import { DEAL_STATUSES, STATES } from "../../../constants/common";
+import { selectProperties } from "../../../redux/actions";
 
 const SingleMap = ({ property }) => {
   const mapStyles = {
@@ -18,6 +19,7 @@ const SingleMap = ({ property }) => {
     : { lat: 37.0902, lng: -95.7129 };
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [activeMarker, setActiveMarker] = useState(null);
 
@@ -37,7 +39,10 @@ const SingleMap = ({ property }) => {
   };
 
   const handleMarkerDoubleClick = () => {
-    console.log(`Double-clicked on ${property}`);
+    if (property?._id) {
+      dispatch(selectProperties([property._id]));
+      navigate(`/dashboard`);
+    }
   };
 
   useEffect(() => {

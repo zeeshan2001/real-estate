@@ -130,3 +130,7 @@
 .note-header-right{
     flex:2;
 }
+.note-edit-btn{
+    display: flex;
+    justify-content: flex-end;
+}

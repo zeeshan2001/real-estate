@@ -1,14 +1,18 @@
-import React, { memo } from "react";
-import { Col, Row } from "antd";
+import React, { memo, useState } from "react";
+import { Col, Row, Form } from "antd";
 import "./SingleTab.css";
 import SingleDetails from "./components/SingleDetails";
 import SingleMap from "./components/SingleMap";
 import StickyNotes from "./components/StickyNotes";
 import CreateNotes from "./components/CreateNotes";
 import { useSelector } from "react-redux";
+import NoteModal from "./components/NoteModal";
 
 const SingleTab = () => {
   const { fetchedProperty } = useSelector((state) => state.property);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [mode, setMode] = useState(false);
+  const [form] = Form.useForm();
   return (
     <div className="single-tab">
       <Row>
@@ -29,10 +33,26 @@ const SingleTab = () => {
           {fetchedProperty && <SingleMap property={fetchedProperty} />}
         </Col>
         <Col xs={24} md={8} className="gutter-row full-height">
-          <CreateNotes />
-          <StickyNotes />
+          <CreateNotes
+            form={form}
+            setMode={setMode}
+            setModalVisible={setModalVisible}
+          />
+          <StickyNotes
+            form={form}
+            setMode={setMode}
+            setModalVisible={setModalVisible}
+          />
         </Col>
       </Row>
+      <NoteModal
+        property={fetchedProperty}
+        form={form}
+        mode={mode}
+        setMode={setMode}
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+      />
     </div>
   );
 };

@@ -12,12 +12,10 @@ import IntakeFormIconActive from "../../assets/icons/ico-form-active.svg";
 import "./Header.css";
 import { UserOutlined } from "@ant-design/icons";
 import { logoutUser } from "../../redux/actions/authActions";
-import AddUser from "./components/AddUser";
 import { openNotification } from "../../utils/ui";
 
 const Header = () => {
   const { user, newUser } = useSelector((state) => state.auth);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("dashboard");
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -34,8 +32,7 @@ const Header = () => {
   }, [window.location.pathname]);
 
   const handleAddUser = () => {
-    setIsModalOpen(true);
-    // Implement your logic for adding a new user
+    navigate("/users");
   };
 
   useEffect(() => {
@@ -49,7 +46,7 @@ const Header = () => {
   if (user?.role === "admin") {
     items = [
       {
-        label: <span onClick={handleAddUser}>Add User</span>,
+        label: <span onClick={handleAddUser}>Manage Users</span>,
         key: "0",
       },
       {
@@ -174,7 +171,6 @@ const Header = () => {
           </div>
         </Col>
       </Row>
-      <AddUser setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />
     </header>
   );
 };
