@@ -289,7 +289,7 @@ const IntakeForm = () => {
                 </Col>
                 <Col xs={24} md={6}>
                   <div className="input-label">
-                    <span className="star-error">*</span>Cencus Track#
+                    <span className="star-error">*</span>Census Track#
                   </div>
                   <Form.Item
                     name="censusTrackNumber"
@@ -707,14 +707,14 @@ const IntakeForm = () => {
               <Row gutter={16} className="mb-10">
                 <Col xs={24} md={6}>
                   <div className="input-label">
-                    <span className="star-error">*</span>Deffered %
+                    <span className="star-error">*</span>Deferred %
                   </div>
                   <Form.Item
                     name="defferedFees"
                     rules={[
                       {
                         required: true,
-                        message: "Deffered Fees is required",
+                        message: "Deferred Fees is required",
                       },
                     ]}
                   >
@@ -723,7 +723,7 @@ const IntakeForm = () => {
                 </Col>
                 <Col xs={24} md={6}>
                   <div className="input-label">
-                    <span className="star-error">*</span>Deffered Fee / Unit
+                    <span className="star-error">*</span>Deferred Fee / Unit
                   </div>
                   <Form.Item
                     name="defferedFeesPerUnit"
