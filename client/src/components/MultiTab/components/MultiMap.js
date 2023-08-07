@@ -27,7 +27,7 @@ const MultiMap = ({ data }) => {
 
   const handleMarkerDoubleClick = (state) => {
     console.log("*state: ", state);
-    if (state?._id) {
+    if (state?.id) {
       dispatch(selectProperties([state.id]));
       navigate(`/dashboard`);
     }
