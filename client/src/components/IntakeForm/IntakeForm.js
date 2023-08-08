@@ -103,6 +103,13 @@ const IntakeForm = () => {
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
+    let errors = [];
+    errorInfo?.errorFields?.forEach((errorField) => {
+      errorField?.errors?.forEach((error) => {
+        errors.push(error);
+      });
+    });
+    openNotification("error", errors.join("\n"), "");
   };
 
   const handlePrint = () => {
@@ -144,6 +151,47 @@ const IntakeForm = () => {
           autoComplete="off"
           form={form}
           // initialValues={DEFAULT_FORM_VALUES}
+          initialValues={{
+            _id: form.getFieldValue("_id"),
+            name: form.getFieldValue("name"),
+            status: form.getFieldValue("status"),
+            address: form.getFieldValue("address"),
+            city: form.getFieldValue("city"),
+            country: form.getFieldValue("country"),
+            state: form.getFieldValue("state"),
+            zipCode: form.getFieldValue("zipCode"),
+            censusTrackNumber: form.getFieldValue("censusTrackNumber"),
+            loiDate: form.getFieldValue("loiDate"),
+            contractDate: form.getFieldValue("contractDate"),
+            famOrSr: form.getFieldValue("famOrSr"),
+            landSize: form.getFieldValue("landSize"),
+            ami: form.getFieldValue("ami"),
+            closingYear: form.getFieldValue("closingYear"),
+            startYear: form.getFieldValue("startYear"),
+            zoning: form.getFieldValue("zoning"),
+            qctDda: form.getFieldValue("qctDda"),
+            sitePlanApproval: form.getFieldValue("sitePlanApproval"),
+            sitePlanningAgency: form.getFieldValue("sitePlanningAgency"),
+            percentage: form.getFieldValue("percentage"),
+            presentZoning: form.getFieldValue("presentZoning"),
+            units: form.getFieldValue("units"),
+            landPrice: form.getFieldValue("landPrice"),
+            landPricePerUnit: form.getFieldValue("landPricePerUnit"),
+            tdc: form.getFieldValue("tdc"),
+            tdcPerUnit: form.getFieldValue("tdcPerUnit"),
+            gcFees: form.getFieldValue("gcFees"),
+            gcFeesPerUnit: form.getFieldValue("gcFeesPerUnit"),
+            devFees: form.getFieldValue("devFees"),
+            devFeesPerUnit: form.getFieldValue("devFeesPerUnit"),
+            defferedFees: form.getFieldValue("defferedFees"),
+            defferedFeesPerUnit: form.getFieldValue("defferedFeesPerUnit"),
+            totalAlFees: form.getFieldValue("totalAlFees"),
+            hardDebt: form.getFieldValue("hardDebt"),
+            softDebt: form.getFieldValue("softDebt"),
+            lihtcEquity: form.getFieldValue("lihtcEquity"),
+            totalSources: form.getFieldValue("totalSources"),
+            noi: form.getFieldValue("noi"),
+          }}
         >
           <Row>
             <Col span={24}>
