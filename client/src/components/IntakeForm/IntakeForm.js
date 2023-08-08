@@ -143,7 +143,7 @@ const IntakeForm = () => {
           onFinishFailed={onFinishFailed}
           autoComplete="off"
           form={form}
-          initialValues={DEFAULT_FORM_VALUES}
+          // initialValues={DEFAULT_FORM_VALUES}
         >
           <Row>
             <Col span={24}>

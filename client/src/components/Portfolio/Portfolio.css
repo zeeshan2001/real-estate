@@ -66,6 +66,7 @@
     width: 200px;
 }
 
+
 .financial-container .heading {
     color: #767676;
     font-size: 18px;
@@ -102,7 +103,12 @@
 }
 
 
-
+.chart-container {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    justify-content: flex-end;
+}
 .custom-tooltip .label {
     color: #fff !important;
     font-size: 14px;
