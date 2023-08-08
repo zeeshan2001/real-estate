@@ -118,12 +118,25 @@ router.put("/update/:id", async (req, res) => {
 router.delete("/delete", async (req, res) => {
   try {
     const { ids } = req.body;
+
+    // Find the properties that are going to be deleted
+    const propertiesToBeDeleted = await Property.find({ _id: { $in: ids } });
+
+    // Delete the properties
     await Property.deleteMany({ _id: { $in: ids } });
+
     const properties = await Property.find();
+
+    // Extract the ids of the deleted properties
+    const deletedPropertyIds = propertiesToBeDeleted.map(
+      (property) => property._id
+    );
+
     res.json({
       success: true,
       message: "Property deleted successfully!",
       properties: properties,
+      deletedPropertyIds: deletedPropertyIds, // Return the ids of the deleted properties
     });
   } catch (err) {
     console.log(err.message);

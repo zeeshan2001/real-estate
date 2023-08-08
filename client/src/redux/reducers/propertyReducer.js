@@ -129,6 +129,10 @@ const propertyReducer = (state = initialState, action) => {
         properties: action.payload?.properties
           ? action.payload?.properties
           : state.properties,
+        fetchedProperty: updateFetchedProperty(
+          state.fetchedProperty,
+          action.payload?.deletedPropertyIds
+        ),
         loading: false,
         error: null,
       };
@@ -190,3 +194,12 @@ const propertyReducer = (state = initialState, action) => {
 };
 
 export default propertyReducer;
+
+function updateFetchedProperty(currentFetchedProperty, deletedPropertyIds) {
+  console.log("*property1: ", currentFetchedProperty, deletedPropertyIds);
+  if (deletedPropertyIds.includes(currentFetchedProperty?._id)) {
+    return null;
+  }
+  console.log("*property2: ", currentFetchedProperty);
+  return currentFetchedProperty;
+}
