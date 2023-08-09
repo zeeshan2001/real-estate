@@ -59,7 +59,7 @@ const Financial = (props) => {
     <div className="financial-container">
       <Row gutter={16}>
         <Col xs={24} sm={24} md={8}>
-          <p className="heading" style={{ paddingLeft: "30%" }}>
+          <p className="heading" style={{ paddingLeft: "34%" }}>
             Units
           </p>
           <ResponsiveContainer width="100%" height="100%">
@@ -107,7 +107,7 @@ const Financial = (props) => {
           </ResponsiveContainer>
         </Col>
         <Col xs={24} sm={24} md={8}>
-          <p className="heading" style={{ textAlign: "center" }}>
+          <p className="heading" style={{ paddingLeft: "28%" }}>
             Dev Fees
           </p>
           <ResponsiveContainer width="100%" height="100%">
@@ -155,7 +155,7 @@ const Financial = (props) => {
           </ResponsiveContainer>
         </Col>
         <Col xs={24} sm={24} md={8}>
-          <p className="heading" style={{ textAlign: "center" }}>
+          <p className="heading" style={{ paddingLeft: "29%" }}>
             GC Fees
           </p>
           <ResponsiveContainer width="100%" height="100%">
