@@ -43,7 +43,8 @@ const Notes = () => {
           <div className="collapse-header multi-notes-header">
             <div className="multi-note-header-left">
               <strong>{note.userId.username} </strong>
-              created this note
+              created this note for
+              <strong> {note?.propertyId?.name}</strong>
             </div>
             <div className="multi-note-header-right fs-12 fw-500">
               <span>{moment(note.date).format("D MMM")} </span>

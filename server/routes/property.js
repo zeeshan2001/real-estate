@@ -124,6 +124,8 @@ router.delete("/delete", async (req, res) => {
 
     // Delete the properties
     await Property.deleteMany({ _id: { $in: ids } });
+    // Delete associated sticky notes
+    await StickyNote.deleteMany({ propertyId: { $in: ids } });
 
     const properties = await Property.find();
 
