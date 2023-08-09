@@ -59,12 +59,14 @@ const Financial = (props) => {
     <div className="financial-container">
       <Row gutter={16}>
         <Col xs={24} sm={24} md={8}>
-          <p className="heading">Units</p>
+          <p className="heading" style={{ paddingLeft: "30%" }}>
+            Units
+          </p>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart width={210} height={400}>
               <Pie
                 data={unitsWithPercentage}
-                cx={90}
+                cx={95}
                 cy={100}
                 innerRadius={60}
                 outerRadius={80}
@@ -82,7 +84,7 @@ const Financial = (props) => {
                 ))}
               </Pie>
               <text
-                x={90}
+                x={95}
                 y={90}
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -92,7 +94,7 @@ const Financial = (props) => {
                 Total
               </text>
               <text
-                x={90}
+                x={95}
                 y={110}
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -110,7 +112,7 @@ const Financial = (props) => {
             <PieChart width={210} height={400}>
               <Pie
                 data={devFeesWithPercentage}
-                cx={90}
+                cx={95}
                 cy={100}
                 innerRadius={60}
                 outerRadius={80}
@@ -128,7 +130,7 @@ const Financial = (props) => {
                 ))}
               </Pie>
               <text
-                x={90}
+                x={95}
                 y={90}
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -138,7 +140,7 @@ const Financial = (props) => {
                 Total
               </text>
               <text
-                x={90}
+                x={95}
                 y={110}
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -156,7 +158,7 @@ const Financial = (props) => {
             <PieChart width={210} height={400}>
               <Pie
                 data={gcFeesWithPercentage}
-                cx={90}
+                cx={95}
                 cy={100}
                 innerRadius={60}
                 outerRadius={80}
@@ -174,7 +176,7 @@ const Financial = (props) => {
                 ))}
               </Pie>
               <text
-                x={85}
+                x={95}
                 y={90}
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -184,7 +186,7 @@ const Financial = (props) => {
                 Total
               </text>
               <text
-                x={85}
+                x={95}
                 y={110}
                 textAnchor="middle"
                 dominantBaseline="middle"
