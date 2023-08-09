@@ -130,7 +130,7 @@ const Financial = (props) => {
                 ))}
               </Pie>
               <text
-                x={95}
+                x={100}
                 y={90}
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -140,7 +140,7 @@ const Financial = (props) => {
                 Total
               </text>
               <text
-                x={95}
+                x={100}
                 y={110}
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -176,7 +176,7 @@ const Financial = (props) => {
                 ))}
               </Pie>
               <text
-                x={95}
+                x={100}
                 y={90}
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -186,7 +186,7 @@ const Financial = (props) => {
                 Total
               </text>
               <text
-                x={95}
+                x={100}
                 y={110}
                 textAnchor="middle"
                 dominantBaseline="middle"
