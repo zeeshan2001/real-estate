@@ -84,7 +84,7 @@ const Financial = (props) => {
                 ))}
               </Pie>
               <text
-                x={95}
+                x={100}
                 y={90}
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -94,7 +94,7 @@ const Financial = (props) => {
                 Total
               </text>
               <text
-                x={95}
+                x={100}
                 y={110}
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -107,7 +107,9 @@ const Financial = (props) => {
           </ResponsiveContainer>
         </Col>
         <Col xs={24} sm={24} md={8}>
-          <p className="heading">Dev Fees</p>
+          <p className="heading" style={{ textAlign: "center" }}>
+            Dev Fees
+          </p>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart width={210} height={400}>
               <Pie
@@ -153,7 +155,9 @@ const Financial = (props) => {
           </ResponsiveContainer>
         </Col>
         <Col xs={24} sm={24} md={8}>
-          <p className="heading">GC Fees</p>
+          <p className="heading" style={{ textAlign: "center" }}>
+            GC Fees
+          </p>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart width={210} height={400}>
               <Pie
