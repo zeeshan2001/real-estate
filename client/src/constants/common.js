@@ -68,3 +68,5 @@ export const SITE_PLAN_APPROVED = [
   { label: "Yes", value: "Yes" },
   { label: "No", value: "No" },
 ];
+
+export const ROOT_API_URL = "http://alivdata.com:5000";

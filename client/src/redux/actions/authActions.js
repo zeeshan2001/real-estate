@@ -8,6 +8,7 @@ import {
   LOGIN_USER_SUCCESS,
   LOGOUT_USER,
 } from "./actionTypes";
+import { ROOT_API_URL } from "../../constants/common";
 
 export const logoutUser = () => {
   return { type: LOGOUT_USER };
@@ -25,10 +26,7 @@ export const loginUser = (user) => {
       }
 
       // Send the API login to login the user
-      const response = await axios.post(
-        "https://rs-backend.onrender.com/api/auth/login",
-        user
-      );
+      const response = await axios.post(`${ROOT_API_URL}/auth/login`, user);
 
       // Dispatch the login success action with the response data
       dispatch({

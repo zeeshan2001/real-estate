@@ -14,6 +14,7 @@ import {
   SET_DELETE_USER_REQUEST,
   SET_DELETE_USER_SUCCESS,
 } from "./actionTypes";
+import { ROOT_API_URL } from "../../constants/common";
 
 // Action for getting existing users
 export const fetchUsers = () => {
@@ -21,9 +22,7 @@ export const fetchUsers = () => {
     try {
       dispatch({ type: SET_USERS_REQUEST });
       // Send the API request to fetch users
-      const response = await axios.get(
-        "https://rs-backend.onrender.com/api/users"
-      );
+      const response = await axios.get("${ROOT_API_URL}/api/users");
       dispatch({
         type: SET_USERS_SUCCESS,
         payload: response.data,
@@ -48,7 +47,7 @@ export const addUser = (user, onSuccessCallback = null) => {
 
       // Send the API request to create the user
       const response = await axios.post(
-        "https://rs-backend.onrender.com/api/auth/addUser",
+        `${ROOT_API_URL}${ROOT_API_URL}/api/auth/addUser`,
         user
       );
 
@@ -77,7 +76,7 @@ export const updateUser = (data, onSuccessCallback = null) => {
     try {
       dispatch({ type: SET_UPDATE_USER_REQUEST });
       const response = await axios.put(
-        `https://rs-backend.onrender.com/api/users/update`,
+        `${ROOT_API_URL}/api/users/update`,
         data
       );
       dispatch({
@@ -104,7 +103,7 @@ export const deleteUser = (data) => {
       dispatch({ type: SET_DELETE_USER_REQUEST });
       // Send the API request to DELETE user
       const response = await axios.delete(
-        `https://rs-backend.onrender.com/api/users/delete`,
+        `${ROOT_API_URL}/api/users/delete`,
         data
       );
       dispatch({

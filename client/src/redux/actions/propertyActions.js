@@ -24,6 +24,7 @@ import {
   SET_MULTI_TAB_DATA_SUCCESS,
   SET_SELECTED_PROPERTIES,
 } from "./actionTypes";
+import { ROOT_API_URL } from "../../constants/common";
 
 // Action Add Property for adding a property
 export const addProperty = (data, onSuccessCallback = null) => {
@@ -34,7 +35,7 @@ export const addProperty = (data, onSuccessCallback = null) => {
 
       // Send the API request to add property
       const response = await axios.post(
-        "https://rs-backend.onrender.com/api/property/add",
+        "https://rs-backend.onrender.com${ROOT_API_URL}/api/property/add",
         data
       );
 
@@ -66,7 +67,7 @@ export const updateProperty = (id, data, onSuccessCallback = null) => {
 
       // Send the API request to UPDATE property
       const response = await axios.put(
-        `https://rs-backend.onrender.com/api/property/update/${id}`,
+        `https://rs-backend.onrender.com${ROOT_API_URL}/api/property/update/${id}`,
         data
       );
 
@@ -98,7 +99,7 @@ export const fetchProperties = () => {
 
       // Send the API request to fetch properties
       const response = await axios.get(
-        "https://rs-backend.onrender.com/api/property/getAll"
+        "https://rs-backend.onrender.com${ROOT_API_URL}/api/property/getAll"
       );
 
       // Dispatch the register success action with the response data
@@ -126,7 +127,7 @@ export const fetchProperty = (propertyId) => {
 
       // Send the API request to fetch property
       const response = await axios.get(
-        `https://rs-backend.onrender.com/api/property/${propertyId}`
+        `https://rs-backend.onrender.com${ROOT_API_URL}/api/property/${propertyId}`
       );
 
       // Dispatch the register success action with the response data
@@ -154,7 +155,7 @@ export const fetchDashboardData = (data) => {
 
       // Send the API request to fetch property
       const response = await axios.get(
-        `https://rs-backend.onrender.com/api/property/dashboard/data`,
+        `https://rs-backend.onrender.com${ROOT_API_URL}/api/property/dashboard/data`,
         data
       );
 
@@ -183,7 +184,7 @@ export const fetchMultiTabData = (data) => {
 
       // Send the API request to fetch property
       const response = await axios.post(
-        `https://rs-backend.onrender.com/api/property/dashboard/multi`,
+        `https://rs-backend.onrender.com${ROOT_API_URL}/api/property/dashboard/multi`,
         data
       );
 
@@ -212,7 +213,7 @@ export const deleteProperty = (data) => {
 
       // Send the API request to DELETE property
       const response = await axios.delete(
-        `https://rs-backend.onrender.com/api/property/delete`,
+        `${ROOT_API_URL}/api/property/delete`,
         data
       );
 

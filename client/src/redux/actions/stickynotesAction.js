@@ -10,6 +10,7 @@ import {
   SET_PROPERTY_NOTES_SUCCESS,
   SET_PROPERTY_NOTES_FAILURE,
 } from "./actionTypes";
+import { ROOT_API_URL } from "../../constants/common";
 
 // Action Add sticky note
 export const addStickyNote = (data, onSuccessCallback = null) => {
@@ -20,7 +21,7 @@ export const addStickyNote = (data, onSuccessCallback = null) => {
 
       // Send the API request to add property
       const response = await axios.post(
-        "https://rs-backend.onrender.com/api/stickynotes/add",
+        "https://rs-backend.onrender.com${ROOT_API_URL}/api/stickynotes/add",
         data
       );
 
@@ -49,7 +50,7 @@ export const updateStickyNote = (data, onSuccessCallback = null) => {
     try {
       dispatch({ type: SET_UPDATE_NOTE_REQUEST });
       const response = await axios.put(
-        `https://rs-backend.onrender.com/api/stickynotes/update`,
+        `https://rs-backend.onrender.com${ROOT_API_URL}/api/stickynotes/update`,
         data
       );
       dispatch({
@@ -78,7 +79,7 @@ export const fetchStickyNoteByProperty = (data) => {
 
       // Send the API request to fetch property
       const response = await axios.get(
-        `https://rs-backend.onrender.com/api/stickynotes/propertyStickyNotes`,
+        `${ROOT_API_URL}/api/stickynotes/propertyStickyNotes`,
         data
       );
 
