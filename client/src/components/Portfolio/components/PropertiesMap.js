@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import { DEAL_STATUSES, STATES } from "../../../constants/common";
 import { selectProperties } from "../../../redux/actions";
+import { LoadScript } from "@react-google-maps/api";
 
 const PropertiesMap = ({ chartData }) => {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ const PropertiesMap = ({ chartData }) => {
 
   return (
     <div className="map-container">
+      {/* <LoadScript googleMapsApiKey={"AIzaSyCpKj1HFXJo-PXIfSP9PbcrDKLbi60BGo8"}> */}
       <GoogleMap mapContainerStyle={mapStyles} zoom={4} center={defaultCenter}>
         {chartData?.map((record) => {
           return record.properties.map((state, index) => {
@@ -78,6 +80,7 @@ const PropertiesMap = ({ chartData }) => {
           });
         })}
       </GoogleMap>
+      {/* </LoadScript> */}
     </div>
   );
 };

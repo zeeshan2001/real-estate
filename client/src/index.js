@@ -8,7 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <LoadScript googleMapsApiKey={process.env.GOOGLE_MAP_API_KEY}>
+    <LoadScript googleMapsApiKey={"AIzaSyCpKj1HFXJo-PXIfSP9PbcrDKLbi60BGo8"}>
       <App />
     </LoadScript>
   </React.StrictMode>

@@ -79,7 +79,7 @@ export const fetchStickyNoteByProperty = (data) => {
 
       // Send the API request to fetch property
       const response = await axios.get(
-        `${ROOT_API_URL}/api/stickynotes/propertyStickyNotes`,
+        `${ROOT_API_URL}/stickynotes/propertyStickyNotes`,
         data
       );
 

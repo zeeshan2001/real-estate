@@ -75,10 +75,7 @@ export const updateUser = (data, onSuccessCallback = null) => {
   return async (dispatch) => {
     try {
       dispatch({ type: SET_UPDATE_USER_REQUEST });
-      const response = await axios.put(
-        `${ROOT_API_URL}/api/users/update`,
-        data
-      );
+      const response = await axios.put(`${ROOT_API_URL}/users/update`, data);
       dispatch({
         type: SET_UPDATE_USER_SUCCESS,
         payload: response.data,
