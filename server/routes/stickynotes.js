@@ -14,7 +14,9 @@ router.get("/propertyStickyNotes", async (req, res) => {
     if (propertyIds?.length > 0) {
       propertyNotes = await StickyNote.find({
         propertyId: { $in: propertyIds },
-      }).populate("userId", "username -_id");
+      })
+        .populate("userId", "username -_id")
+        .populate("propertyId", "name -_id");
     } else {
       propertyNotes = await StickyNote.find()
         .sort({ _id: -1 })
