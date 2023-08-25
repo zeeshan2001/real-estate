@@ -70,3 +70,4 @@ export const SITE_PLAN_APPROVED = [
 ];
 
 export const ROOT_API_URL = "http://alivdata.com:5000/api";
+// export const ROOT_API_URL = "http://localhost:5000/api";

@@ -4,7 +4,9 @@
     font-weight: 600;
     border-bottom: 1px solid #949494;
 }
-
+.property-list-container {
+    margin-top: 10px;
+}
 .properties-container {
     position: relative;
 }
@@ -14,21 +16,22 @@
     font-weight: 600;
 }
 .properties-container .label{
-    color: #6C757D;
-    font-size: 14px;
-    font-weight: 400;
+    /* color: #6C757D; */
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
     text-transform: capitalize;
 }
 .properties-container .value{
     color: #3A819F;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 600;
 }
 
 .pie-text1 {
     color: #515151;
-    font-size: 12px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 600;
 }
 .pie-text2 {
     color: #0E5574;
@@ -36,21 +39,22 @@
     font-weight: 600;
 }
 .properties-legend-box{
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     margin-right: 5px;
     display: inline-block;
+    margin-top: 10px;
 }
 .properties-legend-text {
     color: #6C757D;
-    font-size: 10px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
 }
 .recharts-wrapper {
     height: 260px !important;
 }
 .legend-container{
-    margin-left: 100px;
+    margin-left: 65px;
 }
 .map-container{
     position: relative;
@@ -68,7 +72,8 @@
 
 
 .financial-container .heading {
-    color: #767676;
+    /* color: #767676; */
+    color: #000;
     font-size: 18px;
     font-weight: 600;
     /* text-align: center; */
@@ -81,7 +86,7 @@
     overflow: scroll;
 }
 .note-header-left{
-    flex:3;
+    flex:4;
 }
 .note-header-right{
     flex:2;

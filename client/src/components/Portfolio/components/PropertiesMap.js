@@ -9,7 +9,7 @@ import { LoadScript } from "@react-google-maps/api";
 const PropertiesMap = ({ chartData }) => {
   const dispatch = useDispatch();
   const mapStyles = {
-    height: "500px",
+    height: "515px",
     width: "100%",
   };
 

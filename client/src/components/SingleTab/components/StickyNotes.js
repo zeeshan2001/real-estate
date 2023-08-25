@@ -31,7 +31,7 @@ const StickyNotes = ({ form, setMode, setModalVisible }) => {
           <div className="collapse-header">
             <div className="note-header-left">
               <strong>{note.userId.username} </strong>
-              created this note
+              created this note for <strong>{note.propertyId.name} </strong>
             </div>
             <div className="note-header-right fs-12 fw-500">
               <span>{moment(note.date).format("D MMM")} </span>

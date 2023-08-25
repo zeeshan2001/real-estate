@@ -125,7 +125,11 @@ const Properties = (props) => {
                   <p className="heading">Total {property._id}</p>
                   {property?.percentageCounts?.map((percentage) => {
                     return (
-                      <Row gutter={16} key={percentage.state}>
+                      <Row
+                        gutter={16}
+                        key={percentage.state}
+                        className="property-list-container"
+                      >
                         <Col span={12}>
                           <span className="label">{percentage.state}</span>
                         </Col>

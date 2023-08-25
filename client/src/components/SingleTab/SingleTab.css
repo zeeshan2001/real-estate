@@ -32,13 +32,13 @@
 }
 
 .details-listing-label {
-    color: #6C757D;
+    color: #000;
     font-size: 16px;
     font-weight: 400;
 }
 
 .details-listing-value {
-    color: #3A819F;
+    color: #000072;
     font-size: 16px;
     font-weight: 400;
 }
@@ -51,7 +51,7 @@
 
 .details-heading{
     color: #212529;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -125,7 +125,7 @@
     overflow: scroll;
 }
 .note-header-left{
-    flex:3;
+    flex:4;
 }
 .note-header-right{
     flex:2;

@@ -22,7 +22,7 @@ export const fetchUsers = () => {
     try {
       dispatch({ type: SET_USERS_REQUEST });
       // Send the API request to fetch users
-      const response = await axios.get("${ROOT_API_URL}/api/users");
+      const response = await axios.get(`${ROOT_API_URL}/users`);
       dispatch({
         type: SET_USERS_SUCCESS,
         payload: response.data,
@@ -46,10 +46,7 @@ export const addUser = (user, onSuccessCallback = null) => {
       dispatch({ type: SET_ADD_USER_REQUEST });
 
       // Send the API request to create the user
-      const response = await axios.post(
-        `${ROOT_API_URL}${ROOT_API_URL}/api/auth/addUser`,
-        user
-      );
+      const response = await axios.post(`${ROOT_API_URL}/auth/addUser`, user);
 
       // Dispatch the register success action with the response data
       dispatch({
@@ -99,10 +96,7 @@ export const deleteUser = (data) => {
     try {
       dispatch({ type: SET_DELETE_USER_REQUEST });
       // Send the API request to DELETE user
-      const response = await axios.delete(
-        `${ROOT_API_URL}/api/users/delete`,
-        data
-      );
+      const response = await axios.delete(`${ROOT_API_URL}/users/delete`, data);
       dispatch({
         type: SET_DELETE_USER_SUCCESS,
         payload: response.data,

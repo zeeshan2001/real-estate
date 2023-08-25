@@ -21,7 +21,7 @@ export const addStickyNote = (data, onSuccessCallback = null) => {
 
       // Send the API request to add property
       const response = await axios.post(
-        "https://rs-backend.onrender.com${ROOT_API_URL}/api/stickynotes/add",
+        `${ROOT_API_URL}/stickynotes/add`,
         data
       );
 
@@ -50,7 +50,7 @@ export const updateStickyNote = (data, onSuccessCallback = null) => {
     try {
       dispatch({ type: SET_UPDATE_NOTE_REQUEST });
       const response = await axios.put(
-        `https://rs-backend.onrender.com${ROOT_API_URL}/api/stickynotes/update`,
+        `${ROOT_API_URL}/stickynotes/update`,
         data
       );
       dispatch({
