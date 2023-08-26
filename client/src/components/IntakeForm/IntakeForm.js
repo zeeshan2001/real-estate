@@ -339,15 +339,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Census Track#
                   </div>
-                  <Form.Item
-                    name="censusTrackNumber"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Census Track# is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="censusTrackNumber">
                     <Input type="number" placeholder="Cencus Track#" />
                   </Form.Item>
                 </Col>
@@ -355,15 +347,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Land Size (Acres)
                   </div>
-                  <Form.Item
-                    name="landSize"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Land Size is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="landSize">
                     <Input type="number" placeholder="Land Size (Acres)" />
                   </Form.Item>
                 </Col>
@@ -373,15 +357,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Start Year
                   </div>
-                  <Form.Item
-                    name="startYear"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Start Year is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="startYear">
                     <Input type="text" placeholder="Start Year" />
                   </Form.Item>
                 </Col>
@@ -389,15 +365,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>AMI
                   </div>
-                  <Form.Item
-                    name="ami"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Ami is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="ami">
                     <Input type="number" placeholder="AMI" />
                   </Form.Item>
                 </Col>
@@ -405,15 +373,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>LOI Date
                   </div>
-                  <Form.Item
-                    name="loiDate"
-                    rules={[
-                      {
-                        required: true,
-                        message: "LOI Date is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="loiDate">
                     <DatePicker className="w-100" format="YYYY-MM-DD" />
                   </Form.Item>
                 </Col>
@@ -421,15 +381,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Contract Date
                   </div>
-                  <Form.Item
-                    name="contractDate"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Contract Date is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="contractDate">
                     <DatePicker className="w-100" format="YYYY-MM-DD" />
                   </Form.Item>
                 </Col>
@@ -439,15 +391,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Closing Year
                   </div>
-                  <Form.Item
-                    name="closingYear"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Closing Year is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="closingYear">
                     <Input type="text" placeholder="Closing Year" />
                   </Form.Item>
                 </Col>
@@ -455,15 +399,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Present Zoning
                   </div>
-                  <Form.Item
-                    name="presentZoning"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Present Zoning is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="presentZoning">
                     <Input type="text" placeholder="Present Zoning" />
                   </Form.Item>
                 </Col>
@@ -471,15 +407,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Zoning
                   </div>
-                  <Form.Item
-                    name="zoning"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Zoning is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="zoning">
                     <Select
                       placeholder="Select Zone"
                       options={ZONING}
@@ -491,15 +419,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>4% or 9%
                   </div>
-                  <Form.Item
-                    name="percentage"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Percentage is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="percentage">
                     <Select
                       placeholder="Select Percentage"
                       options={DEAL_PERCENTAGES}
@@ -513,15 +433,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>QCT DDA
                   </div>
-                  <Form.Item
-                    name="qctDda"
-                    rules={[
-                      {
-                        required: true,
-                        message: "QCT DDA is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="qctDda">
                     <Select
                       placeholder="Select QCT DDA"
                       options={QCT_DDA}
@@ -533,15 +445,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Fam or Sr
                   </div>
-                  <Form.Item
-                    name="famOrSr"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Fam or Sr is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="famOrSr">
                     <Select
                       placeholder="Select Fam or Sr"
                       options={DEAL_RESIDENTIALS}
@@ -553,15 +457,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Site Plan Approved
                   </div>
-                  <Form.Item
-                    name="sitePlanApproval"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Site Plan Approval is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="sitePlanApproval">
                     <Select
                       placeholder="Select Approved Site Plan"
                       options={SITE_PLAN_APPROVED}
@@ -573,15 +469,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Site Planning Agency
                   </div>
-                  <Form.Item
-                    name="sitePlanningAgency"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Site Planning Agency is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="sitePlanningAgency">
                     <Input type="text" placeholder="Site Planning Agency" />
                   </Form.Item>
                 </Col>
@@ -599,15 +487,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Units
                   </div>
-                  <Form.Item
-                    name="units"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Units field is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="units">
                     <Input type="Number" placeholder="Units" />
                   </Form.Item>
                 </Col>
@@ -615,15 +495,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span> Land Price
                   </div>
-                  <Form.Item
-                    name="landPrice"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Land Price is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="landPrice">
                     <Input type="Number" placeholder="Land Price" />
                   </Form.Item>
                 </Col>
@@ -631,15 +503,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Land Price / Unit
                   </div>
-                  <Form.Item
-                    name="landPricePerUnit"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Land Price / Unit is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="landPricePerUnit">
                     <Input type="Number" placeholder="Land Price / Unit" />
                   </Form.Item>
                 </Col>
@@ -647,15 +511,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>TDC / Unit
                   </div>
-                  <Form.Item
-                    name="tdcPerUnit"
-                    rules={[
-                      {
-                        required: true,
-                        message: "TDC / Unit is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="tdcPerUnit">
                     <Input type="Number" placeholder="TDC / Unit" />
                   </Form.Item>
                 </Col>
@@ -665,15 +521,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>TDC
                   </div>
-                  <Form.Item
-                    name="tdc"
-                    rules={[
-                      {
-                        required: true,
-                        message: "TDC is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="tdc">
                     <Input type="Number" placeholder="TDC" />
                   </Form.Item>
                 </Col>
@@ -691,15 +539,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>GC Fees
                   </div>
-                  <Form.Item
-                    name="gcFees"
-                    rules={[
-                      {
-                        required: true,
-                        message: "GC Fees is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="gcFees">
                     <Input type="Number" placeholder="GC Fees" />
                   </Form.Item>
                 </Col>
@@ -707,15 +547,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span> GC Fees / Unit
                   </div>
-                  <Form.Item
-                    name="gcFeesPerUnit"
-                    rules={[
-                      {
-                        required: true,
-                        message: "GC Fees / Unit is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="gcFeesPerUnit">
                     <Input type="Number" placeholder="GC Fees / Unit" />
                   </Form.Item>
                 </Col>
@@ -723,15 +555,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Dev Fees
                   </div>
-                  <Form.Item
-                    name="devFees"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Dev Fees is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="devFees">
                     <Input type="Number" placeholder="Dev Fees" />
                   </Form.Item>
                 </Col>
@@ -739,15 +563,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Dev Fees / Unit
                   </div>
-                  <Form.Item
-                    name="devFeesPerUnit"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Dev Fees / Unit is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="devFeesPerUnit">
                     <Input type="Number" placeholder="Dev Fees / Unit" />
                   </Form.Item>
                 </Col>
@@ -757,15 +573,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Deferred %
                   </div>
-                  <Form.Item
-                    name="defferedFees"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Deferred Fees is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="defferedFees">
                     <Input type="Number" placeholder="Defered %" />
                   </Form.Item>
                 </Col>
@@ -773,15 +581,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Deferred Fee / Unit
                   </div>
-                  <Form.Item
-                    name="defferedFeesPerUnit"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Defered Fees / Unit is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="defferedFeesPerUnit">
                     <Input type="Number" placeholder="Defered Fees / Unit" />
                   </Form.Item>
                 </Col>
@@ -789,15 +589,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Total AL Fees
                   </div>
-                  <Form.Item
-                    name="totalAlFees"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Total AL Fees is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="totalAlFees">
                     <Input type="Number" placeholder="Total AL Fees" />
                   </Form.Item>
                 </Col>
@@ -815,15 +607,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Hard Debt
                   </div>
-                  <Form.Item
-                    name="hardDebt"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Hard Debt is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="hardDebt">
                     <Input type="Number" placeholder="Hard Debt" />
                   </Form.Item>
                 </Col>
@@ -831,15 +615,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span> Soft Debt
                   </div>
-                  <Form.Item
-                    name="softDebt"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Soft Debt is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="softDebt">
                     <Input type="Number" placeholder="Soft Debt" />
                   </Form.Item>
                 </Col>
@@ -847,15 +623,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>LIHTC Equity
                   </div>
-                  <Form.Item
-                    name="lihtcEquity"
-                    rules={[
-                      {
-                        required: true,
-                        message: "LIHTC Equity is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="lihtcEquity">
                     <Input type="Number" placeholder="LIHTC Equity" />
                   </Form.Item>
                 </Col>
@@ -863,15 +631,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>Total Sources
                   </div>
-                  <Form.Item
-                    name="totalSources"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Total Sources is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="totalSources">
                     <Input type="Number" placeholder="Total Sources" />
                   </Form.Item>
                 </Col>
@@ -881,15 +641,7 @@ const IntakeForm = () => {
                   <div className="input-label">
                     <span className="star-error">*</span>NOI
                   </div>
-                  <Form.Item
-                    name="noi"
-                    rules={[
-                      {
-                        required: true,
-                        message: "NOI is required",
-                      },
-                    ]}
-                  >
+                  <Form.Item name="noi">
                     <Input type="Number" placeholder="NOI" />
                   </Form.Item>
                 </Col>

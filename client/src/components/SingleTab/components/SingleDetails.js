@@ -63,7 +63,7 @@ const SingleDetails = (props) => {
         <div className="details-listing">
           <div className="details-listing-label">Land Size</div>
           <div className="details-listing-value">
-            {property?.landSize.toLocaleString()}
+            {property?.landSize?.toLocaleString()}
           </div>
         </div>
         <div className="details-listing">
@@ -73,7 +73,7 @@ const SingleDetails = (props) => {
         <div className="details-listing">
           <div className="details-listing-label">AMI</div>
           <div className="details-listing-value">
-            {property?.ami.toLocaleString()}
+            {property?.ami?.toLocaleString()}
           </div>
         </div>
         <div className="details-listing">
@@ -86,67 +86,67 @@ const SingleDetails = (props) => {
         <div className="details-listing">
           <div className="details-listing-label"># Unit</div>
           <div className="details-listing-value">
-            {property?.units.toLocaleString()}
+            {property?.units?.toLocaleString()}
           </div>
         </div>
         <div className="details-listing">
           <div className="details-listing-label">Land Price</div>
           <div className="details-listing-value">
-            ${property?.landPrice.toLocaleString()}
+            ${property?.landPrice?.toLocaleString()}
           </div>
         </div>
         <div className="details-listing">
           <div className="details-listing-label">Land Price / Unit</div>
           <div className="details-listing-value">
-            ${property?.landPricePerUnit.toLocaleString()}
+            ${property?.landPricePerUnit?.toLocaleString()}
           </div>
         </div>
         <div className="details-listing">
           <div className="details-listing-label">TDC</div>
           <div className="details-listing-value">
-            ${property?.tdc.toLocaleString()}
+            ${property?.tdc?.toLocaleString()}
           </div>
         </div>
         <div className="details-listing">
           <div className="details-listing-label">TDC / Unit</div>
           <div className="details-listing-value">
-            ${property?.tdcPerUnit.toLocaleString()}
+            ${property?.tdcPerUnit?.toLocaleString()}
           </div>
         </div>
         <div className="details-listing">
           <div className="details-listing-label">GC Fees</div>
           <div className="details-listing-value">
-            ${property?.gcFees.toLocaleString()}
+            ${property?.gcFees?.toLocaleString()}
           </div>
         </div>
         <div className="details-listing">
           <div className="details-listing-label">GC Fees / Unit</div>
           <div className="details-listing-value">
-            ${property?.gcFeesPerUnit.toLocaleString()}
+            ${property?.gcFeesPerUnit?.toLocaleString()}
           </div>
         </div>
         <div className="details-listing">
           <div className="details-listing-label">Dev Fees</div>
           <div className="details-listing-value">
-            ${property?.devFees.toLocaleString()}
+            ${property?.devFees?.toLocaleString()}
           </div>
         </div>
         <div className="details-listing">
           <div className="details-listing-label">Dev Fees / Unit</div>
           <div className="details-listing-value">
-            ${property?.devFeesPerUnit.toLocaleString()}
+            ${property?.devFeesPerUnit?.toLocaleString()}
           </div>
         </div>
         <div className="details-listing">
           <div className="details-listing-label">Hard Debt</div>
           <div className="details-listing-value">
-            ${property?.hardDebt.toLocaleString()}
+            ${property?.hardDebt?.toLocaleString()}
           </div>
         </div>
         <div className="details-listing">
           <div className="details-listing-label">Soft Debt</div>
           <div className="details-listing-value">
-            ${property?.softDebt.toLocaleString()}
+            ${property?.softDebt?.toLocaleString()}
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ const MultiDetails = (props) => {
       <div className="details-listing">
         <div className="details-listing-label">Total Number of Units</div>
         <div className="details-listing-value">
-          {data.totalUnits.toLocaleString()}
+          {data.totalUnits?.toLocaleString()}
         </div>
       </div>
       <div className="details-listing">
@@ -23,7 +23,7 @@ const MultiDetails = (props) => {
       <div className="details-listing">
         <div className="details-listing-label">TDC</div>
         <div className="details-listing-value">
-          ${data.totalTDC.toLocaleString()}
+          ${data.totalTDC?.toLocaleString()}
         </div>
       </div>
       <div className="details-listing">
@@ -39,7 +39,7 @@ const MultiDetails = (props) => {
       <div className="details-listing">
         <div className="details-listing-label">Development Fees</div>
         <div className="details-listing-value">
-          ${data.totalDevFees.toLocaleString()}
+          ${data.totalDevFees?.toLocaleString()}
         </div>
       </div>
       <div className="details-listing">
@@ -64,7 +64,7 @@ const MultiDetails = (props) => {
       <div className="details-listing">
         <div className="details-listing-label">GC Fees</div>
         <div className="details-listing-value">
-          ${data.totalGCFees.toLocaleString()}
+          ${data.totalGCFees?.toLocaleString()}
         </div>
       </div>
       <div className="details-listing">
@@ -81,25 +81,25 @@ const MultiDetails = (props) => {
       <div className="details-listing">
         <div className="details-listing-label">Hard Debt</div>
         <div className="details-listing-value">
-          ${data.totalHardDebt.toLocaleString()}
+          ${data.totalHardDebt?.toLocaleString()}
         </div>
       </div>
       <div className="details-listing">
         <div className="details-listing-label">Soft Debt</div>
         <div className="details-listing-value">
-          ${data.totalSoftDebt.toLocaleString()}
+          ${data.totalSoftDebt?.toLocaleString()}
         </div>
       </div>
       <div className="details-listing">
         <div className="details-listing-label">LIHTC Equity</div>
         <div className="details-listing-value">
-          ${data.totalLIHTCEquity.toLocaleString()}
+          ${data.totalLIHTCEquity?.toLocaleString()}
         </div>
       </div>
       <div className="details-listing">
         <div className="details-listing-label">NOI</div>
         <div className="details-listing-value">
-          ${data.totalNOI.toLocaleString()}
+          ${data.totalNOI?.toLocaleString()}
         </div>
       </div>
     </div>

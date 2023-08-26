@@ -49,10 +49,12 @@ router.post("/add", async (req, res) => {
     //   } = req.body;
     let reqData = { ...req.body };
     const currentDate = moment().format("YYYY-MM-DD");
-    reqData["loiDate"] = moment(req.body["loiDate"]).format("YYYY-MM-DD");
-    reqData["contractDate"] = moment(req.body["contractDate"]).format(
-      "YYYY-MM-DD"
-    );
+    if (reqData["loiDate"])
+      reqData["loiDate"] = moment(req.body["loiDate"]).format("YYYY-MM-DD");
+    if (reqData["contractDate"])
+      reqData["contractDate"] = moment(req.body["contractDate"]).format(
+        "YYYY-MM-DD"
+      );
     reqData["createdAt"] = currentDate;
     reqData["updatedAt"] = currentDate;
     // Create a new property object
@@ -96,10 +98,12 @@ router.put("/update/:id", async (req, res) => {
     const propertyId = req.params.id;
     const updateData = { ...req.body };
     const currentDate = moment().format("YYYY-MM-DD");
-    updateData["loiDate"] = moment(req.body["loiDate"]).format("YYYY-MM-DD");
-    updateData["contractDate"] = moment(req.body["contractDate"]).format(
-      "YYYY-MM-DD"
-    );
+    if (updateData["loiDate"])
+      updateData["loiDate"] = moment(req.body["loiDate"]).format("YYYY-MM-DD");
+    if (updateData["contractDate"])
+      updateData["contractDate"] = moment(req.body["contractDate"]).format(
+        "YYYY-MM-DD"
+      );
     updateData["updatedAt"] = currentDate;
 
     const updatedProperty = await Property.findByIdAndUpdate(

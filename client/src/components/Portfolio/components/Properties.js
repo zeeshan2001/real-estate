@@ -3,6 +3,7 @@ import { Row, Col, Popover, Button, Divider } from "antd";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import ChartLegends from "./ChartLegends";
 import { DEAL_STATUSES } from "../../../constants/common";
+import { useEffect } from "react";
 
 const COLORS = DEAL_STATUSES.map((status) => status.color);
 
@@ -10,6 +11,7 @@ const Properties = (props) => {
   const { portfolio, chartData } = props;
   const [activeIndex, setActiveIndex] = useState(null);
   const [activeData, setActiveData] = useState(null);
+  const [propertyStates, setPropertyStates] = useState([]);
 
   const total = chartData.reduce((accum, curr) => accum + curr.count, 0);
 
@@ -22,6 +24,12 @@ const Properties = (props) => {
     setActiveIndex(index);
     setActiveData(data);
   };
+
+  useEffect(() => {
+    setPropertyStates(
+      portfolio?.properties?.filter((property) => property._id)
+    );
+  }, [portfolio?.properties]);
 
   return (
     <div className="properties-container">
@@ -118,7 +126,7 @@ const Properties = (props) => {
           </Row>
         </Col>
         <Col xs={24} sm={24} md={12}>
-          {portfolio?.properties?.map((property) => {
+          {propertyStates?.map((property) => {
             return (
               <Row key={property._id}>
                 <Col xs={24} sm={24} md={24}>
