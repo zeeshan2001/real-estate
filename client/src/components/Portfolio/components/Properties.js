@@ -50,10 +50,16 @@ const Properties = (props) => {
                     dataKey="count"
                     textRendering={12}
                   >
+                    {console.log("*data: ", dataWithPercentage)}
                     {dataWithPercentage.map((entry, index) => (
                       <Cell
                         key={`cell-${index}`}
-                        fill={COLORS[index % COLORS.length]}
+                        // fill={COLORS[index % COLORS.length]}
+                        fill={
+                          DEAL_STATUSES.find(
+                            (status) => status.label === entry._id
+                          ).color
+                        }
                         onClick={() => onPieClick(entry, index)}
                       />
                     ))}

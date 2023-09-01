@@ -78,7 +78,11 @@ const Financial = (props) => {
                 {unitsWithPercentage.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
+                    // fill={COLORS[index % COLORS.length]}
+                    fill={
+                      DEAL_STATUSES.find((status) => status.label === entry._id)
+                        .color
+                    }
                     onClick={() => onPieClick("units", entry, index)}
                   />
                 ))}
@@ -126,7 +130,11 @@ const Financial = (props) => {
                 {devFeesWithPercentage.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
+                    // fill={COLORS[index % COLORS.length]}
+                    fill={
+                      DEAL_STATUSES.find((status) => status.label === entry._id)
+                        .color
+                    }
                     onClick={() => onPieClick("devFees", entry, index)}
                   />
                 ))}
@@ -174,7 +182,11 @@ const Financial = (props) => {
                 {gcFeesWithPercentage.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
+                    // fill={COLORS[index % COLORS.length]}
+                    fill={
+                      DEAL_STATUSES.find((status) => status.label === entry._id)
+                        .color
+                    }
                     onClick={() => onPieClick("gcFees", entry, index)}
                   />
                 ))}

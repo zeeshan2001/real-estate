@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import { DEAL_STATUSES, STATES } from "../../../constants/common";
 import { selectProperties } from "../../../redux/actions";
+import { getRandomCoordinates } from "../../../utils/services";
 
 const MultiMap = ({ data }) => {
   const mapStyles = {
@@ -59,7 +60,7 @@ const MultiMap = ({ data }) => {
                 url: customMarkerIconUrl,
                 scaledSize: new window.google.maps.Size(40, 40),
               }}
-              position={stateCoordinates?.coordinates}
+              position={getRandomCoordinates(stateCoordinates?.coordinates)}
               onClick={() => handleMarkerClick(state)}
               onDblClick={() => handleMarkerDoubleClick(state)}
             >

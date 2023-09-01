@@ -5,6 +5,7 @@ import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import { DEAL_STATUSES, STATES } from "../../../constants/common";
 import { selectProperties } from "../../../redux/actions";
 import { LoadScript } from "@react-google-maps/api";
+import { getRandomCoordinates } from "../../../utils/services";
 
 const PropertiesMap = ({ chartData }) => {
   const dispatch = useDispatch();
@@ -36,7 +37,8 @@ const PropertiesMap = ({ chartData }) => {
   return (
     <div className="map-container">
       {/* <LoadScript googleMapsApiKey={"AIzaSyCpKj1HFXJo-PXIfSP9PbcrDKLbi60BGo8"}> */}
-      <GoogleMap mapContainerStyle={mapStyles} zoom={4} center={defaultCenter}>
+      {console.log("*chart: ", chartData)}
+      <GoogleMap mapContainerStyle={mapStyles} zoom={5} center={defaultCenter}>
         {chartData?.map((record) => {
           return record.properties.map((state, index) => {
             const stateCoordinates = STATES.find(
@@ -61,7 +63,7 @@ const PropertiesMap = ({ chartData }) => {
                   url: customMarkerIconUrl,
                   scaledSize: new window.google.maps.Size(40, 40),
                 }}
-                position={stateCoordinates?.coordinates}
+                position={getRandomCoordinates(stateCoordinates?.coordinates)}
                 onClick={() => handleMarkerClick(state)}
                 onDblClick={() => handleMarkerDoubleClick(state)}
               >

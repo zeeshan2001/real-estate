@@ -336,17 +336,13 @@ const IntakeForm = () => {
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Census Track#
-                  </div>
+                  <div className="input-label">Census Track#</div>
                   <Form.Item name="censusTrackNumber">
                     <Input type="number" placeholder="Cencus Track#" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Land Size (Acres)
-                  </div>
+                  <div className="input-label">Land Size (Acres)</div>
                   <Form.Item name="landSize">
                     <Input type="number" placeholder="Land Size (Acres)" />
                   </Form.Item>
@@ -354,33 +350,25 @@ const IntakeForm = () => {
               </Row>
               <Row gutter={16} className="mb-10">
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Start Year
-                  </div>
+                  <div className="input-label">Start Year</div>
                   <Form.Item name="startYear">
                     <Input type="text" placeholder="Start Year" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>AMI
-                  </div>
+                  <div className="input-label">AMI</div>
                   <Form.Item name="ami">
                     <Input type="number" placeholder="AMI" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>LOI Date
-                  </div>
+                  <div className="input-label">LOI Date</div>
                   <Form.Item name="loiDate">
                     <DatePicker className="w-100" format="YYYY-MM-DD" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Contract Date
-                  </div>
+                  <div className="input-label">Contract Date</div>
                   <Form.Item name="contractDate">
                     <DatePicker className="w-100" format="YYYY-MM-DD" />
                   </Form.Item>
@@ -388,25 +376,19 @@ const IntakeForm = () => {
               </Row>
               <Row gutter={16} className="mb-10">
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Closing Year
-                  </div>
+                  <div className="input-label">Closing Year</div>
                   <Form.Item name="closingYear">
                     <Input type="text" placeholder="Closing Year" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Present Zoning
-                  </div>
+                  <div className="input-label">Present Zoning</div>
                   <Form.Item name="presentZoning">
                     <Input type="text" placeholder="Present Zoning" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Zoning
-                  </div>
+                  <div className="input-label">Zoning</div>
                   <Form.Item name="zoning">
                     <Select
                       placeholder="Select Zone"
@@ -416,9 +398,7 @@ const IntakeForm = () => {
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>4% or 9%
-                  </div>
+                  <div className="input-label">4% or 9%</div>
                   <Form.Item name="percentage">
                     <Select
                       placeholder="Select Percentage"
@@ -430,9 +410,7 @@ const IntakeForm = () => {
               </Row>
               <Row gutter={16} className="mb-10">
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>QCT DDA
-                  </div>
+                  <div className="input-label">QCT DDA</div>
                   <Form.Item name="qctDda">
                     <Select
                       placeholder="Select QCT DDA"
@@ -442,9 +420,7 @@ const IntakeForm = () => {
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Fam or Sr
-                  </div>
+                  <div className="input-label">Fam or Sr</div>
                   <Form.Item name="famOrSr">
                     <Select
                       placeholder="Select Fam or Sr"
@@ -454,9 +430,7 @@ const IntakeForm = () => {
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Site Plan Approved
-                  </div>
+                  <div className="input-label">Site Plan Approved</div>
                   <Form.Item name="sitePlanApproval">
                     <Select
                       placeholder="Select Approved Site Plan"
@@ -466,9 +440,7 @@ const IntakeForm = () => {
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Site Planning Agency
-                  </div>
+                  <div className="input-label">Site Planning Agency</div>
                   <Form.Item name="sitePlanningAgency">
                     <Input type="text" placeholder="Site Planning Agency" />
                   </Form.Item>
@@ -484,33 +456,25 @@ const IntakeForm = () => {
             <div className="info-content">
               <Row gutter={16} className="mb-10">
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Units
-                  </div>
+                  <div className="input-label">Units</div>
                   <Form.Item name="units">
                     <Input type="Number" placeholder="Units" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span> Land Price
-                  </div>
+                  <div className="input-label">Land Price</div>
                   <Form.Item name="landPrice">
                     <Input type="Number" placeholder="Land Price" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Land Price / Unit
-                  </div>
+                  <div className="input-label">Land Price / Unit</div>
                   <Form.Item name="landPricePerUnit">
                     <Input type="Number" placeholder="Land Price / Unit" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>TDC / Unit
-                  </div>
+                  <div className="input-label">TDC / Unit</div>
                   <Form.Item name="tdcPerUnit">
                     <Input type="Number" placeholder="TDC / Unit" />
                   </Form.Item>
@@ -518,9 +482,7 @@ const IntakeForm = () => {
               </Row>
               <Row gutter={16} className="mb-10">
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>TDC
-                  </div>
+                  <div className="input-label">TDC</div>
                   <Form.Item name="tdc">
                     <Input type="Number" placeholder="TDC" />
                   </Form.Item>
@@ -536,33 +498,25 @@ const IntakeForm = () => {
             <div className="info-content">
               <Row gutter={16} className="mb-10">
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>GC Fees
-                  </div>
+                  <div className="input-label">GC Fees</div>
                   <Form.Item name="gcFees">
                     <Input type="Number" placeholder="GC Fees" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span> GC Fees / Unit
-                  </div>
+                  <div className="input-label">GC Fees / Unit</div>
                   <Form.Item name="gcFeesPerUnit">
                     <Input type="Number" placeholder="GC Fees / Unit" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Dev Fees
-                  </div>
+                  <div className="input-label">Dev Fees</div>
                   <Form.Item name="devFees">
                     <Input type="Number" placeholder="Dev Fees" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Dev Fees / Unit
-                  </div>
+                  <div className="input-label">Dev Fees / Unit</div>
                   <Form.Item name="devFeesPerUnit">
                     <Input type="Number" placeholder="Dev Fees / Unit" />
                   </Form.Item>
@@ -570,25 +524,19 @@ const IntakeForm = () => {
               </Row>
               <Row gutter={16} className="mb-10">
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Deferred %
-                  </div>
+                  <div className="input-label">Deferred %</div>
                   <Form.Item name="defferedFees">
                     <Input type="Number" placeholder="Defered %" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Deferred Fee / Unit
-                  </div>
+                  <div className="input-label">Deferred Fee / Unit</div>
                   <Form.Item name="defferedFeesPerUnit">
                     <Input type="Number" placeholder="Defered Fees / Unit" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Total AL Fees
-                  </div>
+                  <div className="input-label">Total AL Fees</div>
                   <Form.Item name="totalAlFees">
                     <Input type="Number" placeholder="Total AL Fees" />
                   </Form.Item>
@@ -604,33 +552,25 @@ const IntakeForm = () => {
             <div className="info-content">
               <Row gutter={16} className="mb-10">
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Hard Debt
-                  </div>
+                  <div className="input-label">Hard Debt</div>
                   <Form.Item name="hardDebt">
                     <Input type="Number" placeholder="Hard Debt" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span> Soft Debt
-                  </div>
+                  <div className="input-label">Soft Debt</div>
                   <Form.Item name="softDebt">
                     <Input type="Number" placeholder="Soft Debt" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>LIHTC Equity
-                  </div>
+                  <div className="input-label">LIHTC Equity</div>
                   <Form.Item name="lihtcEquity">
                     <Input type="Number" placeholder="LIHTC Equity" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>Total Sources
-                  </div>
+                  <div className="input-label">Total Sources</div>
                   <Form.Item name="totalSources">
                     <Input type="Number" placeholder="Total Sources" />
                   </Form.Item>
@@ -638,9 +578,7 @@ const IntakeForm = () => {
               </Row>
               <Row gutter={16} className="mb-10">
                 <Col xs={24} md={6}>
-                  <div className="input-label">
-                    <span className="star-error">*</span>NOI
-                  </div>
+                  <div className="input-label">NOI</div>
                   <Form.Item name="noi">
                     <Input type="Number" placeholder="NOI" />
                   </Form.Item>
